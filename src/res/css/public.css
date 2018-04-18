@@ -1,0 +1,21 @@
+section{background-color: #333;padding: 134px 0;width: 100%;}
+section .login{width: 450px;height: 400px;background-color: #f7f7f7;margin:auto;}
+section .login .tab{border-bottom: 1px solid #dcdcdc;background-color: #fff}
+section .login li{width: 50%;height: 62px;line-height: 62px;font-size: 18px;text-align: center;color: #999999}
+section .login li:hover{cursor: pointer}
+section .login li.on{color: #38a7f5;border-bottom: 4px solid #459ef2;}
+section .login .loginBox{padding: 30px 40px;}
+section .login .loginBox input,.select-menu-input{border-radius:5px;width: 100%;height: 45px;line-height: 45px;background-color: #fff;padding: 0 26px;margin-bottom: 20px;font-size: 16px;border: 1px solid #dcdcdc}
+section .login .loginBox input:-ms-input-placeholder{color:#999;}
+section .login .loginBox input::-webkit-input-placeholder{color: #999}
+section .login .loginBox input::-moz-placeholder{color: #999}
+section .login .loginBox .loginBtn{width:368px;height:46px;color:#fff;background-color: #3aa8f5;font-size: 16px;border: 0;border-radius: 5px;}
+section .login .loginBox .forgetPass{width:100%;text-align: center;display: block;font-size: 16px;color: #3aa8f5}
+section .login .loginBox .placeholder-parent{margin-bottom: 20px!important;}
+section .login .loginBox{display: none}
+section .login .loginBox.on{display: block}
+section .login .loginBox .code{width: 230px;}
+section .login .loginBox .sendMsg{color: #3aa8f5;font-size: 16px;display: inline-block;height: 45px;line-height: 45px;margin-left: 20px;width: 116px;text-align: center;}
+section .login #reg .clearfix .placeholder-parent{float: left;width: 230px!important;}
+section .third .tab{width: 100%;background-color: #f7f7f7;border-bottom: 0;font-size: 20px;color: #333333;padding-top: 40px;text-align: center}
+section .login .loginBox select.sendMsg{color: #333;border: 1px solid #dcdcdc;border-radius: 5px;padding: 0 20px;}

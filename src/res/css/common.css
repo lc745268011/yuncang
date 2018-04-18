@@ -1,0 +1,97 @@
+/*公用变量*/
+/*初始化样式*/
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input,button,select,textarea{outline:none}
+textarea{resize:none}
+body {
+    font: 14px "微软雅黑", "Arial Narrow", HELVETICA;
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+    color: #666666;
+}
+input[type=button]{cursor: pointer}
+input[type=button]:hover{opacity: 0.8}
+a {
+    color: #666666;
+    text-decoration: none;
+}
+a:hover {
+    color: #666666;
+    text-decoration: none;
+    cursor: pointer;
+}
+em {
+    font-style: normal;
+}
+li {
+    list-style: none;
+}
+img {
+    border: 0;
+    vertical-align: middle;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+p {
+    word-wrap: break-word;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.clearfix:after {
+    clear: both;
+}
+.mid_box,header,section,footer{
+    width: 1200px;
+    margin: 0 auto;
+    min-width: 1200px;
+}
+.rel {
+    position: relative;
+}
+.abs {
+    position: absolute;
+}
+header{background-color: #37a6f4;height: 70px;line-height: 70px;width: 100%}
+header a{color: #fff;font-size: 18px;}
+header a:hover{color: #fff}
+header #logo{margin-right: 236px;}
+header .fl li{margin-right: 65px;}
+footer{background-color: #fff;color: #666666;font-size: 16px;height: 50px;line-height: 50px;width: 100%;text-align: center}

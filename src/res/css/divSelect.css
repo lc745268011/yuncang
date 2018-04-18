@@ -1,0 +1,65 @@
+.select-menu{
+    cursor:pointer;
+}
+.select-menu-ul{
+    margin-top:50px;
+    list-style:none;
+    opacity:0;
+    display:none;
+    width:116px;
+    text-align:left;
+    border:1px solid #ddd;
+    background:#fff;
+    position:absolute;
+    z-index:1;
+}
+section .login .select-menu-ul li{
+    width: 100%;
+    color: #333;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+}
+.select-menu-ul li:hover{
+    background:#3aa8f5;
+    color: #fff!important;
+}
+.select-menu-div{
+    position:relative;
+    height:45px;
+    line-height:45px;
+}
+.select-this{
+    background:#3aa8f5;
+    color: #fff!important;
+}
+.select-this:hover{
+    background:#3aa8f5!important;
+}
+i{
+    margin-right:5px;
+    position:absolute;
+    right:0;
+    top:7px;
+    line-height: 30px!important;
+    color: #333;
+}
+.select-menu-input{
+    border:0;
+    cursor:pointer;
+    user-select:none;
+    box-sizing: border-box;
+    border: 1px solid #dcdcdc;
+    color: #999;
+    line-height: 43px;
+    text-align: left;
+}
+.select-menu-i{
+    transform:rotate(180deg);
+
+}
+i{
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}

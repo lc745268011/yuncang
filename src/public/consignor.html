@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../res/css/common.css">
+    <link rel="stylesheet" href="../res/css/public.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="../res/js/jquery.placeholder.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <title>货主登录/注册</title>
+</head>
+<body>
+<header>
+    <div class="mid_box clearfix">
+        <div id="logo" class="fl"><a href="/"><img src="../res/img/logo.png" alt=""></a></div>
+        <div class="fl">
+            <ul class="clearfix">
+                <li class="fl">
+                    <a href="javascript:;">我是货主</a>
+                </li>
+                <li class="fl">
+                    <a href="">我是库主</a>
+                </li>
+                <li class="fl">
+                    <a href="./thirdParty.html">我是第三方监管</a>
+                </li>
+            </ul>
+        </div>
+        <div class="fr">
+            <a href="./backstage.html">后台管理</a>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="login">
+        <div class="tab">
+            <ul class="clearfix" id="tabs">
+                <li class="on fl" onclick="tab(this)">货主登录</li>
+                <li class="fl" onclick="tab(this)">货主注册</li>
+            </ul>
+        </div>
+        <div id="tabBoxs">
+            <div class="loginBox on" id="login">
+                <input type="text" placeholder="请输入手机号">
+                <input type="password" placeholder="请输入密码">
+                <input type="button" value="登  录" class="loginBtn">
+                <a href="./forgetPassword.html" class="forgetPass">忘记密码</a>
+            </div>
+            <div class="loginBox" id="reg">
+                <input type="text" placeholder="请输入手机号">
+                <div class="clearfix">
+                    <input type="text" placeholder="请输入验证码" class="fl code">
+                    <a href="javascript:;" class="fl sendMsg">发送验证码</a>
+                </div>
+                <input type="password" placeholder="请设置登录密码">
+                <input type="button" value="立即注册" class="loginBtn">
+            </div>
+        </div>
+
+    </div>
+</section>
+<footer>
+    <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
+</footer>
+<script src="../res/js/tab.js"></script>
+
+<script>
+    $(function() {
+        $("input").placeholder();
+    });
+</script>
+</body>
+</html>
