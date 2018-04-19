@@ -1,0 +1,17 @@
+.m70{margin-right: 28px;}
+#info aside{width: 178px;background-color: #f7f7f7;border: 1px solid #dcdcdc;min-height: 536px;padding-left: 30px;padding-top: 30px}
+#info aside .navTitle{color: #333333;font-size: 18px;font-weight: bold}
+#info aside ul{font-size: 14px;color: #333333;margin-left: 30px;}
+#info aside ul li{margin-top: 16px;}
+#info aside ul li.on a{color: #38a7f5}
+#info article{width: 1022px;padding: 64px 18px 20px 55px}
+#info article>div{margin-bottom: 30px;}
+#info article .title{width: 90px;text-align: right;font-size: 14px;color: #666666;height: 40px;line-height: 40px;margin-right: 26px;}
+#info article .select-menu-div{width: 168px;height: 40px;}
+#info article .select-menu{width: 330px;border-radius: 4px;height: 40px;line-height: 38px;}
+#info article .placeholder,#info article .placeholder-parent{width: 330px!important;}
+#info article .placeholder-parent{float: left;}
+#info article .select-menu-input{padding: 0 25px;height: 40px;line-height: 38px;}
+#info article .select-menu-ul{width: 168px;}
+#info article .inputBox{border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
+#info article .submitBtn{width: 154px;height: 38px;text-align: center;color: #fff;background-color: #38a7f5;line-height: 38px;border: 0;border-radius: 4px;}
