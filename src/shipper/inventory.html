@@ -12,7 +12,7 @@
     <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     <script src="../res/js/jquery.placeholder.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-    <title>基本信息</title>
+    <title>我的存货</title>
 </head>
 <body>
 <header>
@@ -23,7 +23,7 @@
         </div>
     </div>
 </header>
-<section class="info" id="info">
+<section class="inventory" id="info">
     <div class="mid_box clearfix">
         <aside class="fl">
             <div class="navTitle">
@@ -36,64 +36,75 @@
             </ul>
         </aside>
         <article class="fl clearfix">
-            <div class="clearfix fl">
-                <div class="title fl">货主类型：</div>
-                <div class="select-menu fl m70">
-                    <div class="select-menu-div">
-                        <div id="No1" disabled class="select-menu-input"></div>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                    <ul class="select-menu-ul" >
-                        <li  class="select-this">货主</li>
-                        <li>库主</li>
+            <div class="clearfix">
+                <a href="" class="add fl">+ 我要存货</a>
+                <ul class="fr clearfix" id="tabs">
+                    <li class="on fl" onclick="tab(this)">进行中</li>
+                    <li class="fl" onclick="tab(this)">已到期</li>
+                </ul>
+            </div>
+            <div id="tabBoxs">
+                <div class="loginBox on">
+                    <ul>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">大蒜 <span>类型：红皮</span></div>
+                                <div>仓库名称：XXX的大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>所在仓库区域：1洞</div>
+                                <div>计划存放重量：250斤</div>
+                                <div>实际仓库存量：100斤</div>
+                                <div>第三方监管：中国银行</div>
+                                <div>截止日期：2018-01-01</div>
+                            </div>
+                            <div class="pBtn vCenter">
+                                <div><a href="">查看出入库记录</a></div>
+                                <div><a href="">查看监控</a></div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">大蒜 <span>类型：红皮</span></div>
+                                <div>仓库名称：XXX的大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>所在仓库区域：1洞</div>
+                                <div>计划存放重量：250斤</div>
+                                <div>实际仓库存量：100斤</div>
+                                <div>第三方监管：中国银行</div>
+                                <div>截止日期：2018-01-01</div>
+                            </div>
+                            <div class="pBtn vCenter">
+                                <div><a href="">查看出入库记录</a></div>
+                                <div><a href="">查看监控</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="loginBox">
+                    <ul>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">大蒜 <span>类型：红皮</span></div>
+                                <div>仓库名称：XXX的大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>所在仓库区域：1洞</div>
+                                <div>计划存放重量：250斤</div>
+                                <div>实际仓库存量：100斤</div>
+                                <div>第三方监管：中国银行</div>
+                                <div>截止日期：2018-01-01</div>
+                            </div>
+                            <div class="pBtn vCenter">
+                                <div><a href="">查看出入库记录</a></div>
+                                <div class="del"><a href="">删除</a></div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="clearfix fl">
-                <div class="title fl">货主类型：</div>
-                <div class="select-menu fl">
-                    <div class="select-menu-div">
-                        <div id="No2" disabled class="select-menu-input"></div>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                    <ul class="select-menu-ul" >
-                        <li  class="select-this">货主</li>
-                        <li>库主</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="clearfix fl">
-                <div class="title fl">姓名：</div>
-                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入姓名">
-            </div>
-            <div class="clearfix fl">
-                <div class="title fl">机构名：</div>
-                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入机构名">
-            </div>
-            <div class="clearfix fl">
-                <div class="title fl">身份证：</div>
-                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入身份证">
-            </div>
-            <div class="clearfix fl">
-                <div class="title fl">机构代码：</div>
-                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入机构代码">
-            </div>
-            <div class="clearfix">
-                <div class="title fl">手机号：</div>
-                <div class="fl select-menu m70">15568545125</div>
-            </div>
-            <div class="clearfix">
-                <div class="title fl">备用手机号：</div>
-                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入手机号（选填）">
-            </div>
-            <div class="clearfix">
-                <div class="title fl">微信号：</div>
-                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入微信号（选填）">
-            </div>
-            <div class="clearfix">
-                <div class="title fl"></div>
-                <input type="button" value="保存" class="submitBtn">
-            </div>
+
         </article>
     </div>
 
@@ -101,6 +112,8 @@
 <footer>
     <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
 </footer>
+<script src="../res/js/tab.js"></script>
+
 <script>
     $(function() {
         $("input").placeholder();

@@ -90,9 +90,12 @@ p {
     position: absolute;
 }
 .fixed-bottom{position: fixed;bottom: 0;width: 100%}
+.vCenter{display: table-cell;vertical-align: middle}
 header{background-color: #37a6f4;height: 70px;line-height: 68px;width: 100%}
 header a{color: #fff;font-size: 18px;}
 header a:hover{color: #fff}
 header #logo{margin-right: 20px;}
 header .title span{color: #fff;font-size: 20px;border-left: 1px solid #fff;padding:0px 0 5px 20px;}
 footer{background-color: #fff;color: #666666;font-size: 16px;height: 50px;line-height: 50px;width: 100%;text-align: center}
+.loginBox{display: none}
+.loginBox.on{display: block}

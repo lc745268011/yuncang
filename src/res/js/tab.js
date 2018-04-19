@@ -1,5 +1,6 @@
 var tabs= document.getElementById('tabs').getElementsByTagName("li");
-var divs= document.getElementById('tabBoxs').getElementsByTagName("div");
+var divs= document.getElementById('tabBoxs').children;
+console.log(divs)
 for(var i=0;i<tabs.length;i++){
     tabs[i].onclick=function(){tab(this);}
 }

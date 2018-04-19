@@ -3,7 +3,7 @@
 #info aside .navTitle{color: #333333;font-size: 18px;font-weight: bold}
 #info aside ul{font-size: 14px;color: #333333;margin-left: 30px;}
 #info aside ul li{margin-top: 16px;}
-#info aside ul li.on a{color: #38a7f5}
+#info aside ul li.on a,#info aside ul li a:hover{color: #38a7f5}
 #info article{width: 1022px;padding: 64px 18px 20px 55px}
 #info article>div{margin-bottom: 30px;}
 #info article .title{width: 90px;text-align: right;font-size: 14px;color: #666666;height: 40px;line-height: 40px;margin-right: 26px;}
@@ -15,3 +15,19 @@
 #info article .select-menu-ul{width: 168px;}
 #info article .inputBox{border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
 #info article .submitBtn{width: 154px;height: 38px;text-align: center;color: #fff;background-color: #38a7f5;line-height: 38px;border: 0;border-radius: 4px;}
+#info.inventory article{padding: 30px 25px}
+#info.inventory article .add{border: 1px solid #37a6f4;border-radius: 4px;width:104px;height:38px;text-align:center;color: #38a7f5;font-size: 14px;line-height: 36px;}
+#info.inventory article #tabs{margin-top: 14px;font-size: 14px;color: #333333}
+#info.inventory article #tabs li:hover{cursor: pointer;color: #38a7f5}
+#info.inventory article #tabs li:first-child{border-right: 1px solid #333333;margin-right: 5px;padding-right: 5px;}
+#info.inventory article #tabs .on{color: #38a7f5}
+#info.inventory article .loginBox li{margin-bottom:20px;border: 1px solid #dcdcdc;border-radius: 4px;padding: 20px;display: table;width: 100%}
+#info.inventory article .loginBox li .pTitle{color: #333;font-size: 18px;font-weight: bold;margin-bottom: 10px;}
+#info.inventory article .loginBox li .pTitle span{color: #666;font-size: 12px;font-weight: normal;margin-left: 14px;}
+#info.inventory article .loginBox li .pImg{width: 240px;height: 180px;border-radius: 4px;background-color: #38a7f5;}
+#info.inventory article .loginBox li .pInfo{width: 335px;padding:0 28px;color: #666;font-size: 12px;line-height: 1.7}
+#info.inventory article .loginBox li .pBtn{width: 355px;border-left: 1px solid #dcdcdc;padding-left: 80px;}
+#info.inventory article .loginBox li .pBtn div{width: 156px;height: 38px;line-height: 38px;color: #fff;background-color: #38a7f5;text-align: center;border-radius: 4px;margin-bottom: 10px;}
+#info.inventory article .loginBox li .pBtn div a{color: #fff}
+#info.inventory article .loginBox li .pBtn div:last-child{margin-bottom: 0;}
+#info.inventory article .loginBox li .pBtn div.del{background-color: #df5353}
