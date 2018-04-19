@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="../res/css/common.css">
     <link rel="stylesheet" href="../res/css/shipper.css">
     <link rel="stylesheet" href="../res/css/divSelect.css">
+    <link rel="stylesheet" href="../res/js/theme/default/laydate.css">
     <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     <script src="../res/js/jquery.placeholder.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="../res/js/laydate.js"></script>
     <title>我的存货</title>
 </head>
 <body>
@@ -23,7 +25,7 @@
         </div>
     </div>
 </header>
-<section class="inventory" id="info">
+<section class="apply" id="info">
     <div class="mid_box clearfix">
         <aside class="fl">
             <div class="navTitle">
@@ -40,9 +42,47 @@
                 <a href="" class="add fl">返回</a>
             </div>
             <ul>
-                <li>
-                    <div class="title">货物名称：</div>
-
+                <li class="clearfix">
+                    <div class="title fl">货物名称：</div>
+                    <div class="select-menu fl">
+                        <div class="select-menu-div">
+                            <div id="No1" disabled class="select-menu-input"></div>
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                        <ul class="select-menu-ul" >
+                            <li  class="select-this">货主</li>
+                            <li>库主</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="title fl">货物名称：</div>
+                    <div class="select-menu fl">
+                        <div class="select-menu-div">
+                            <div id="No2" disabled class="select-menu-input"></div>
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                        <ul class="select-menu-ul" >
+                            <li  class="select-this">货主</li>
+                            <li>库主</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="title fl">货物数量（斤）：</div>
+                    <input type="text" placeholder="请输入货物数量">
+                </li>
+                <li class="clearfix">
+                    <div class="title fl">截止日期：</div>
+                    <input id="date" type="text"/>
+                </li>
+                <li class="clearfix">
+                    <div class="title fl">选择仓库：</div>
+                    <input  type="text" placeholder="请选择仓库" readonly class="depot"/>
+                </li>
+                <li class="clearfix">
+                    <div class="title fl"></div>
+                    <input type="button" value="申请" class="submitBtn">
                 </li>
             </ul>
         </article>
@@ -52,8 +92,6 @@
 <footer>
     <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
 </footer>
-<script src="../res/js/tab.js"></script>
-
 <script>
     $(function() {
         $("input").placeholder();
@@ -72,6 +110,9 @@
         }
         footerPosition();
         $(window).resize(footerPosition);
+    });
+    laydate.render({
+        elem: '#date'
     });
 </script>
 <script src="../res/js/divSelect.js"></script>
