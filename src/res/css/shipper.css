@@ -67,3 +67,11 @@
 #info.monitor article>p{color: #666;font-size: 16px;line-height: 1.8}
 #info.monitor article>p:last-child{margin-bottom: 24px;}
 #info.monitor article .recordList ul li{margin: 30px 30px 0 0}
+#info.apply .box1 .chooseList{display: table;width: 100%;margin-bottom: 10px;}
+#info.apply .box1 ul{height: 250px;}
+#info.apply .box1 .chooseList .chooseBtn{width:80px;height: 38px;line-height: 38px;color: #fff;background-color: #38a7f5;text-align: center;border-radius: 4px;font-size: 14px;}
+#info.apply .box1 .chooseList div.vCenter:first-child{width: 400px;padding: 0 20px;}
+#info.apply .box1 .chooseList div.vCenter:first-child p:first-child{font-size: 16px;color: #333}
+#info.apply .box1 .chooseList div.vCenter:first-child p:last-child{font-size: 14px;color: #cccccc}
+#info.apply .box1 .chooseList div.vCenter:nth-child(2){width: 140px;padding: 0 20px;}
+#info.apply .box1 .chooseList div.vCenter:last-child{text-align: right}

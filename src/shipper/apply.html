@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../res/js/theme/default/layer.css">
     <link rel="stylesheet" href="../res/css/common.css">
     <link rel="stylesheet" href="../res/css/shipper.css">
     <link rel="stylesheet" href="../res/css/divSelect.css">
@@ -14,8 +15,126 @@
     <script src="../res/js/jquery.placeholder.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="../res/js/laydate.js"></script>
+    <script src="../res/js/layer.js"></script>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=4e956e4fdfb0c22a69fc38eb0c1d5d3e&plugin=AMap.Autocomplete,AMap.PlaceSearch"></script>
     <title>我的存货</title>
 </head>
+<style type="text/css">
+    .info {
+        border: solid 1px silver;
+    }
+    div.info-top {
+        position: relative;
+        background: #fff;
+        border-bottom: 1px solid #CCC;
+        border-radius: 5px 5px 0 0;
+    }
+    div.info-top div {
+        display: inline-block;
+        color: #333333;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 31px;
+        padding: 0 10px;
+    }
+    div.info-top img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        transition-duration: 0.25s;
+    }
+    div.info-top img:hover {
+        box-shadow: 0px 0px 5px #000;
+    }
+    div.info-middle {
+        font-size: 12px;
+        padding: 6px;
+        line-height: 20px;
+    }
+    div.info-bottom {
+        height: 0px;
+        width: 100%;
+        clear: both;
+        text-align: center;
+    }
+    div.info-bottom img {
+        position: relative;
+        z-index: 104;
+    }
+    span {
+        margin-left: 5px;
+        font-size: 11px;
+    }
+    .info-middle img {
+        float: left;
+        margin-right: 6px;
+    }
+    .amap-marker .marker-route {
+        position: absolute;
+        width: 40px;
+        height: 44px;
+        color: #e90000;
+        background: url(http://webapi.amap.com/theme/v1.3/images/newpc/poi-1.png) no-repeat;
+        cursor: pointer;
+    }
+    .amap-marker .marker-marker-bus-from {
+        background-position: -334px -180px;
+    }
+    .amap-sug-result{z-index: 99999999}
+    .introduce .map{position: relative;width: 955px;height: 250px;margin: 60px auto;margin-bottom: 45px;}
+    .introduce .introduce_tile_cn{margin-bottom: 20px;}
+    #tipinput{box-sizing: border-box;
+        border: 0;
+        padding: 9px 0;
+        border-left: 10px solid transparent;
+        border-right: 27px solid transparent;
+        line-height: 20px;
+        font-size: 16px;
+        height: 38px;
+        color: #333;
+        position: relative;
+        border-radius: 2px 0 0 2px;
+        float: left;
+        width: 329px;
+    }
+    #search-button {
+        pointer-events: auto;
+        background: url(http://webmap0.map.bdstatic.com/wolfman/static/common/images/new/searchbox_f175577.png) no-repeat 0 -76px #3385ff;
+        width: 57px;
+        height: 38px;
+        float: left;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        border-radius: 0 2px 2px 0;
+        box-shadow: 1px 2px 1px rgba(0,0,0,.15);
+    }
+    .searchbox-content .searchbox-content-button.cancel-button {
+        background: url(http://webmap0.map.bdstatic.com/wolfman/static/common/images/new/searchbox_f175577.png) no-repeat 0 -38px;
+    }
+    .searchbox-content-button {
+        box-sizing: border-box;
+        float: left;
+        height: 38px;
+        width: 39px;
+        cursor: pointer;
+        position: relative;
+        background: url(http://webmap0.map.bdstatic.com/wolfman/static/common/images/new/searchbox_f175577.png) no-repeat 0 -37px #fff;
+    }
+    .introduce ul li {
+        width: 48%;
+        margin:0 1%;
+        float: left;
+        color: #fff;
+        height: auto;
+        min-height: 200px;
+        cursor: pointer;
+    }
+    .box1{padding: 20px;}
+    .map{height: 305px;margin-bottom: 20px;}
+</style>
+
 <body>
 <header>
     <div class="mid_box clearfix">
@@ -25,7 +144,7 @@
         </div>
     </div>
 </header>
-<section class="apply" id="info">
+<section class="apply record" id="info">
     <div class="mid_box clearfix">
         <aside class="fl">
             <div class="navTitle">
@@ -78,7 +197,7 @@
                 </li>
                 <li class="clearfix">
                     <div class="title fl">选择仓库：</div>
-                    <input  type="text" placeholder="请选择仓库" readonly class="depot"/>
+                    <input  type="text" placeholder="请选择仓库" readonly class="depot" onclick="choose()"/>
                 </li>
                 <li class="clearfix">
                     <div class="title fl"></div>
@@ -87,7 +206,96 @@
             </ul>
         </article>
     </div>
-
+    <div class="box1" style="display: none">
+        <div class="map rel">
+            <div id="container" class="abs" style="height: 305px;width: 100%"></div>
+            <div style="padding-top: 15px;" class="clearfix">
+                <table class="fl">
+                    <tr>
+                        <td>
+                            <input id="tipinput" class="searchbox-content-common"/>
+                            <div class="searchbox-content-button right-button loading-button cancel-button" data-title="清空" data-tooltip="2" onclick="cancel_button()"></div>
+                        </td>
+                    </tr>
+                </table>
+                <button id="search-button" data-title="搜索" data-tooltip="1"></button>
+            </div>
+        </div>
+        <ul>
+            <li class="chooseList">
+                <div class="vCenter">
+                    <p>XXXXXX的仓库</p>
+                    <p>山东省青岛市市北区重庆南路268号</p>
+                </div>
+                <div class="vCenter">
+                    剩余：500斤
+                </div>
+                <div class="vCenter">
+                    <div class="chooseBtn">选择</div>
+                </div>
+            </li>
+            <li class="chooseList">
+                <div class="vCenter">
+                    <p>XXXXXX的仓库</p>
+                    <p>山东省青岛市市北区重庆南路268号</p>
+                </div>
+                <div class="vCenter">
+                    剩余：500斤
+                </div>
+                <div class="vCenter">
+                    <div class="chooseBtn">选择</div>
+                </div>
+            </li>
+            <li class="chooseList">
+                <div class="vCenter">
+                    <p>XXXXXX的仓库</p>
+                    <p>山东省青岛市市北区重庆南路268号</p>
+                </div>
+                <div class="vCenter">
+                    剩余：500斤
+                </div>
+                <div class="vCenter">
+                    <div class="chooseBtn">选择</div>
+                </div>
+            </li>
+            <li class="chooseList">
+                <div class="vCenter">
+                    <p>XXXXXX的仓库</p>
+                    <p>山东省青岛市市北区重庆南路268号</p>
+                </div>
+                <div class="vCenter">
+                    剩余：500斤
+                </div>
+                <div class="vCenter">
+                    <div class="chooseBtn">选择</div>
+                </div>
+            </li>
+            <li class="chooseList">
+                <div class="vCenter">
+                    <p>XXXXXX的仓库</p>
+                    <p>山东省青岛市市北区重庆南路268号</p>
+                </div>
+                <div class="vCenter">
+                    剩余：500斤
+                </div>
+                <div class="vCenter">
+                    <div class="chooseBtn">选择</div>
+                </div>
+            </li>
+            <li class="chooseList">
+                <div class="vCenter">
+                    <p>XXXXXX的仓库</p>
+                    <p>山东省青岛市市北区重庆南路268号</p>
+                </div>
+                <div class="vCenter">
+                    剩余：500斤
+                </div>
+                <div class="vCenter">
+                    <div class="chooseBtn">选择</div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </section>
 <footer>
     <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
@@ -114,6 +322,109 @@
     laydate.render({
         elem: '#date'
     });
+    var map = new AMap.Map("container", {
+        resizeEnable: true,
+        center: [120.13101,30.264252],
+        zoom: 16
+    });
+    addMarker();
+    //添加marker标记
+    function addMarker() {
+        map.clearMap();
+        var marker = new AMap.Marker({
+            map: map,
+            position: [120.13101,30.264252]
+        });
+        //鼠标点击marker弹出自定义的信息窗体
+        AMap.event.addListener(marker, 'click', function() {
+            infoWindow.open(map, marker.getPosition());
+        });
+    }
+
+    //实例化信息窗体
+    var title = '杭州巨鲸财富管理有限公司',
+        content = [];
+    content.push("地址：求是路8号公元大厦南楼15楼1503室");
+    content.push("电话：0571-87188225");
+    var infoWindow = new AMap.InfoWindow({
+        isCustom: true,  //使用自定义窗体
+        content: createInfoWindow(title, content.join("<br/>")),
+        offset: new AMap.Pixel(16, -45)
+    });
+
+    //构建自定义信息窗体
+    function createInfoWindow(title, content) {
+        var info = document.createElement("div");
+        info.className = "info";
+
+        //可以通过下面的方式修改自定义窗体的宽高
+        //info.style.width = "400px";
+        // 定义顶部标题
+        var top = document.createElement("div");
+        var titleD = document.createElement("div");
+        var closeX = document.createElement("img");
+        top.className = "info-top";
+        titleD.innerHTML = title;
+        closeX.src = "http://webapi.amap.com/images/close2.gif";
+        closeX.onclick = closeInfoWindow;
+
+        top.appendChild(titleD);
+        top.appendChild(closeX);
+        info.appendChild(top);
+
+        // 定义中部内容
+        var middle = document.createElement("div");
+        middle.className = "info-middle";
+        middle.style.backgroundColor = 'white';
+        middle.innerHTML = content;
+        info.appendChild(middle);
+
+        // 定义底部内容
+        var bottom = document.createElement("div");
+        bottom.className = "info-bottom";
+        bottom.style.position = 'relative';
+        bottom.style.top = '0px';
+        bottom.style.margin = '0 auto';
+        var sharp = document.createElement("img");
+        sharp.src = "http://webapi.amap.com/images/sharp.png";
+        bottom.appendChild(sharp);
+        info.appendChild(bottom);
+        return info;
+    }
+
+    //关闭信息窗体
+    function closeInfoWindow() {
+        map.clearInfoWindow();
+    }
+    //输入提示
+    var autoOptions = {
+        input: "tipinput"
+    };
+    var auto = new AMap.Autocomplete(autoOptions);
+    var placeSearch = new AMap.PlaceSearch({
+        map: map
+    });  //构造地点查询类
+    AMap.event.addListener(auto, "select", select);//注册监听，当选中某条记录时会触发
+    function select(e) {
+        placeSearch.setCity(e.poi.adcode);
+        placeSearch.search(e.poi.name);  //关键字查询查询
+    }
+
+</script>
+<script>
+    function cancel_button(){
+        $('#tipinput').val('');
+    }
+    function choose() {
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true,
+            skin: 'box',
+            content: $('.box1')
+        });
+    }
 </script>
 <script src="../res/js/divSelect.js"></script>
 </body>
