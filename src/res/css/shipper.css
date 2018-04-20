@@ -45,9 +45,9 @@
 #info.wait article .loginBox li .pBtn div.del:hover{cursor: pointer}
 #info.wait article .loginBox li .pBtn div:nth-child(2){color: #999;font-size: 12px;}
 #info.record article .rTitle{font-size: 18px;color: #333;font-weight: bold;margin-bottom: 30px;}
-#info.record article .recordList .rListTitle{font-size: 18px;color: #37a6f4;font-weight: bold;display: table;}
+#info.record article .recordList .rListTitle{display: table;color: #666;font-size: 16px;}
 #info.record article .recordList .rListTitle .line{width: 6px;height: 18px;background-color: #37a6f4;}
-#info.record article .recordList .rListTitle span{padding-left: 6px;}
+#info.record article .recordList .rListTitle span.name{padding-left: 6px;font-size: 18px;color: #37a6f4;font-weight: bold;}
 #info.record article .recordList table tr,#info.record article .recordList table{width: 100%}
 #info.record article .recordList table td,#info.record article .recordList table th{width: 33.3%;text-align: center;color: #333;padding: 14px 0;font-weight: normal}
 #info.record article .recordList table th{background-color: #ccc;font-size: 16px;}
@@ -64,3 +64,6 @@
 #info.record article .box .search{width: 210px;height: 38px;border: 1px solid #dcdcdc;border-radius: 4px;overflow: hidden;position: relative}
 #info.record article .box .search img{position: absolute;left: 10px;margin-top: 10px;}
 #info.record article .box .search input{border: 0;height: 36px;padding-left: 35px;padding-right: 10px;}
+#info.monitor article>p{color: #666;font-size: 16px;line-height: 1.8}
+#info.monitor article>p:last-child{margin-bottom: 24px;}
+#info.monitor article .recordList ul li{margin: 30px 30px 0 0}
