@@ -26,7 +26,7 @@
 #info.inventory article .loginBox li .pTitle span{color: #666;font-size: 12px;font-weight: normal;margin-left: 14px;}
 #info.inventory article .loginBox li .pImg{width: 240px;height: 180px;border-radius: 4px;background-color: #38a7f5;}
 #info.inventory article .loginBox li .pInfo{width: 335px;padding:0 28px;color: #666;font-size: 12px;line-height: 1.7}
-#info.inventory article .loginBox li .pBtn{width: 355px;border-left: 1px solid #dcdcdc;padding-left: 80px;}
+#info.inventory article .loginBox li .pBtn{width: 355px;border-left: 1px solid #dcdcdc;padding:0 70px;}
 #info.inventory article .loginBox li .pBtn div{width: 156px;height: 38px;line-height: 38px;color: #fff;background-color: #38a7f5;text-align: center;border-radius: 4px;margin-bottom: 10px;}
 #info.inventory article .loginBox li .pBtn div a{color: #fff}
 #info.inventory article .loginBox li .pBtn div:last-child{margin-bottom: 0;}
@@ -37,3 +37,10 @@
 #info.apply article li input{border-radius: 4px;border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
 #info.apply article li.clearfix{margin-bottom: 20px;}
 #info.apply article li .depot:hover,#info.apply article li #date:hover{cursor: pointer}
+#info.wait article .loginBox li .pBtn{padding: 0 60px;}
+#info.wait article .loginBox li .pBtn div{background-color: transparent;height: auto;margin-bottom: 0;width: auto}
+#info.wait article .loginBox li .submit div:first-child{color: #37a6f4;font-size: 18px;}
+#info.wait article .loginBox li .refuse div:first-child{color: #999;font-size: 18px;}
+#info.wait article .loginBox li .pBtn div.del{width: 154px;margin: 0 auto}
+#info.wait article .loginBox li .pBtn div.del:hover{cursor: pointer}
+#info.wait article .loginBox li .pBtn div:nth-child(2){color: #999;font-size: 12px;}

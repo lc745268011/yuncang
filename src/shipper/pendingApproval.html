@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../res/css/common.css">
+    <link rel="stylesheet" href="../res/css/shipper.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <title>我的存货</title>
+</head>
+<body>
+<header>
+    <div class="mid_box clearfix">
+        <div id="logo" class="fl"><a href="/"><img src="../res/img/logo.png" alt=""></a></div>
+        <div class="fr">
+            <a href="">退出</a>
+        </div>
+    </div>
+</header>
+<section class="inventory wait" id="info">
+    <div class="mid_box clearfix">
+        <aside class="fl">
+            <div class="navTitle">
+                我是货主
+            </div>
+            <ul>
+                <li><a href="">基本信息</a></li>
+                <li class="on"><a href="">我的存货</a></li>
+                <li><a href="">待审核存货</a></li>
+            </ul>
+        </aside>
+        <article class="fl clearfix">
+            <div class="clearfix">
+                <a href="" class="add fl">+ 我要存货</a>
+            </div>
+            <div id="tabBoxs">
+                <div class="loginBox on">
+                    <ul>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">大蒜 <span>类型：红皮</span></div>
+                                <div>仓库名称：XXX的大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>所在仓库区域：1洞</div>
+                                <div>计划存放重量：250斤</div>
+                                <div>实际仓库存量：100斤</div>
+                                <div>第三方监管：中国银行</div>
+                                <div>截止日期：2018-01-01</div>
+                            </div>
+                            <div class="pBtn vCenter submit">
+                                <div>已提交申请</div>
+                                <div>您的存货申请提交给仓库库主，请耐心等待</div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">大蒜 <span>类型：红皮</span></div>
+                                <div>仓库名称：XXX的大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>所在仓库区域：1洞</div>
+                                <div>计划存放重量：250斤</div>
+                                <div>实际仓库存量：100斤</div>
+                                <div>第三方监管：中国银行</div>
+                                <div>截止日期：2018-01-01</div>
+                            </div>
+                            <div class="pBtn vCenter refuse">
+                                <div>已提交申请</div>
+                                <div>您的存货申请提交给仓库库主，请耐心等待</div>
+                                <div class="del">删除</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </article>
+    </div>
+
+</section>
+<footer>
+    <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
+</footer>
+<script>
+    $(function(){
+        function footerPosition(){
+            $("footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if(!(contentHeight > winHeight)){
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("footer").addClass("fixed-bottom");
+            } else {
+                $("footer").removeClass("fixed-bottom");
+            }
+        }
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
+</script>
+</body>
+</html>
