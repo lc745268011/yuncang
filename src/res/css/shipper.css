@@ -36,6 +36,7 @@
 #info.apply article .select-menu-div,#info.apply article li input{height: 40px;line-height: 38px; }
 #info.apply article li input{border-radius: 4px;border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
 #info.apply article li.clearfix{margin-bottom: 20px;}
+#info.apply article li .depot{width: 640px;}
 #info.apply article li .depot:hover,#info.apply article li #date:hover{cursor: pointer}
 #info.wait article .loginBox li .pBtn{padding: 0 60px;}
 #info.wait article .loginBox li .pBtn div{background-color: transparent;height: auto;margin-bottom: 0;width: auto}

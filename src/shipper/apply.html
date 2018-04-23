@@ -14,7 +14,6 @@
     <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     <script src="../res/js/jquery.placeholder.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-    <script src="../res/js/laydate.js"></script>
     <script src="../res/js/layer.js"></script>
     <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=4e956e4fdfb0c22a69fc38eb0c1d5d3e&plugin=AMap.Autocomplete,AMap.PlaceSearch"></script>
@@ -193,11 +192,11 @@
                 </li>
                 <li class="clearfix">
                     <div class="title fl">截止日期：</div>
-                    <input id="date" type="text"/>
+                    <input id="date" type="text" readonly/>
                 </li>
                 <li class="clearfix">
                     <div class="title fl">选择仓库：</div>
-                    <input  type="text" placeholder="请选择仓库" readonly class="depot" onclick="choose()"/>
+                    <input  type="text" placeholder="请选择仓库" readonly class="depot" onclick="choose()" value="XXXXXX的仓库山东省青岛市市北区重庆南路268号XXXXXX的仓库山东省青岛市市北区重庆南路268号"/>
                 </li>
                 <li class="clearfix">
                     <div class="title fl"></div>
@@ -223,74 +222,74 @@
         </div>
         <ul>
             <li class="chooseList">
-                <div class="vCenter">
+                <div class="vCenter cInfo">
                     <p>XXXXXX的仓库</p>
                     <p>山东省青岛市市北区重庆南路268号</p>
                 </div>
                 <div class="vCenter">
                     剩余：500斤
                 </div>
-                <div class="vCenter">
+                <div class="vCenter" onclick="choose1(this)">
                     <div class="chooseBtn">选择</div>
                 </div>
             </li>
             <li class="chooseList">
-                <div class="vCenter">
-                    <p>XXXXXX的仓库</p>
+                <div class="vCenter cInfo">
+                    <p>XXXXXX的仓库1</p>
                     <p>山东省青岛市市北区重庆南路268号</p>
                 </div>
                 <div class="vCenter">
                     剩余：500斤
                 </div>
-                <div class="vCenter">
+                <div class="vCenter" onclick="choose1(this)">
                     <div class="chooseBtn">选择</div>
                 </div>
             </li>
             <li class="chooseList">
-                <div class="vCenter">
-                    <p>XXXXXX的仓库</p>
+                <div class="vCenter cInfo">
+                    <p>XXXXXX的仓库2</p>
                     <p>山东省青岛市市北区重庆南路268号</p>
                 </div>
                 <div class="vCenter">
                     剩余：500斤
                 </div>
-                <div class="vCenter">
+                <div class="vCenter" onclick="choose1(this)">
                     <div class="chooseBtn">选择</div>
                 </div>
             </li>
             <li class="chooseList">
-                <div class="vCenter">
-                    <p>XXXXXX的仓库</p>
+                <div class="vCenter cInfo">
+                    <p>XXXXXX的仓库3</p>
                     <p>山东省青岛市市北区重庆南路268号</p>
                 </div>
                 <div class="vCenter">
                     剩余：500斤
                 </div>
-                <div class="vCenter">
+                <div class="vCenter" onclick="choose1(this)">
                     <div class="chooseBtn">选择</div>
                 </div>
             </li>
             <li class="chooseList">
-                <div class="vCenter">
-                    <p>XXXXXX的仓库</p>
+                <div class="vCenter cInfo">
+                    <p>XXXXXX的仓库4</p>
                     <p>山东省青岛市市北区重庆南路268号</p>
                 </div>
                 <div class="vCenter">
                     剩余：500斤
                 </div>
-                <div class="vCenter">
+                <div class="vCenter" onclick="choose1(this)">
                     <div class="chooseBtn">选择</div>
                 </div>
             </li>
             <li class="chooseList">
-                <div class="vCenter">
-                    <p>XXXXXX的仓库</p>
+                <div class="vCenter cInfo">
+                    <p>XXXXXX的仓库5</p>
                     <p>山东省青岛市市北区重庆南路268号</p>
                 </div>
                 <div class="vCenter">
                     剩余：500斤
                 </div>
-                <div class="vCenter">
+                <div class="vCenter" onclick="choose1(this)">
                     <div class="chooseBtn">选择</div>
                 </div>
             </li>
@@ -319,9 +318,54 @@
         footerPosition();
         $(window).resize(footerPosition);
     });
-    laydate.render({
-        elem: '#date'
-    });
+
+</script>
+<script src="../res/js/laydate.js"></script>
+
+<script>
+    function cancel_button(){
+        $('#tipinput').val('');
+    }
+    function choose() {
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true,
+            skin: 'box',
+            content: $('.box1')
+        });
+    }
+    var warehouse;
+    function choose1(obj) {
+        warehouse=$(obj).parent().find('p').eq(0).text();
+        warehouse+='('+$(obj).parent().find('p').eq(1).text()+')';
+        layer.closeAll();
+        $('.depot').val(warehouse)
+    }
+
+    $('section').click(function (e) {
+        e.stopPropagation();
+        $('.layui-laydate').remove()
+    })
+    $('#date').click(function (e) {
+        console.log(1)
+        laydate.render({
+            elem: '#date',
+            closeStop: '#date',
+            show: true,
+            trigger: 'click'
+        });
+        e.stopPropagation();
+
+    })
+</script>
+<script src="../res/js/divSelect.js"></script>
+<script>
+    /**
+     * 高德地图
+     * @type {AMap.Map}
+     */
     var map = new AMap.Map("container", {
         resizeEnable: true,
         center: [120.13101,30.264252],
@@ -409,23 +453,6 @@
         placeSearch.setCity(e.poi.adcode);
         placeSearch.search(e.poi.name);  //关键字查询查询
     }
-
 </script>
-<script>
-    function cancel_button(){
-        $('#tipinput').val('');
-    }
-    function choose() {
-        layer.open({
-            type: 1,
-            title: false,
-            closeBtn: 0,
-            shadeClose: true,
-            skin: 'box',
-            content: $('.box1')
-        });
-    }
-</script>
-<script src="../res/js/divSelect.js"></script>
 </body>
 </html>
