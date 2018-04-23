@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
     <link rel="stylesheet" href="../res/css/common.css">
     <link rel="stylesheet" href="../res/css/shipper.css">
-    <link rel="stylesheet" href="../res/css/divSelect.css">
     <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
-    <script src="../res/js/jquery.placeholder.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <title>我的存货</title>
 </head>
@@ -30,14 +28,14 @@
                 我是货主
             </div>
             <ul>
-                <li><a href="">基本信息</a></li>
-                <li class="on"><a href="">我的存货</a></li>
-                <li><a href="">待审核存货</a></li>
+                <li><a href="./info.html">基本信息</a></li>
+                <li class="on"><a href="#">我的存货</a></li>
+                <li><a href="./pendingApproval.html">待审核存货</a></li>
             </ul>
         </aside>
         <article class="fl clearfix">
             <div class="clearfix">
-                <a href="" class="add fl">+ 我要存货</a>
+                <a href="./apply.html" class="add fl">+ 我要存货</a>
                 <ul class="fr clearfix" id="tabs">
                     <li class="on fl" onclick="tab(this)">进行中</li>
                     <li class="fl" onclick="tab(this)">已到期</li>
@@ -59,8 +57,8 @@
                                 <div>截止日期：2018-01-01</div>
                             </div>
                             <div class="pBtn vCenter">
-                                <div><a href="">查看出入库记录</a></div>
-                                <div><a href="">查看监控</a></div>
+                                <div><a href="./record.html">查看出入库记录</a></div>
+                                <div><a href="./monitor.html">查看监控</a></div>
                             </div>
                         </li>
                         <li class="clearfix">
@@ -76,8 +74,8 @@
                                 <div>截止日期：2018-01-01</div>
                             </div>
                             <div class="pBtn vCenter">
-                                <div><a href="">查看出入库记录</a></div>
-                                <div><a href="">查看监控</a></div>
+                                <div><a href="./record.html">查看出入库记录</a></div>
+                                <div><a href="./monitor.html">查看监控</a></div>
                             </div>
                         </li>
                     </ul>
@@ -97,7 +95,7 @@
                                 <div>截止日期：2018-01-01</div>
                             </div>
                             <div class="pBtn vCenter">
-                                <div><a href="">查看出入库记录</a></div>
+                                <div><a href="./record.html">查看出入库记录</a></div>
                                 <div class="del"><a href="">删除</a></div>
                             </div>
                         </li>
@@ -115,9 +113,6 @@
 <script src="../res/js/tab.js"></script>
 
 <script>
-    $(function() {
-        $("input").placeholder();
-    });
     $(function(){
         function footerPosition(){
             $("footer").removeClass("fixed-bottom");
@@ -134,6 +129,5 @@
         $(window).resize(footerPosition);
     });
 </script>
-<script src="../res/js/divSelect.js"></script>
 </body>
 </html>

@@ -28,7 +28,7 @@
 #info.inventory article .loginBox li .pInfo{width: 335px;padding:0 28px;color: #666;font-size: 12px;line-height: 1.7}
 #info.inventory article .loginBox li .pBtn{width: 355px;border-left: 1px solid #dcdcdc;padding:0 70px;}
 #info.inventory article .loginBox li .pBtn div{width: 156px;margin: 0 auto;height: 38px;line-height: 38px;color: #fff;background-color: #38a7f5;text-align: center;border-radius: 4px;margin-bottom: 10px;}
-#info.inventory article .loginBox li .pBtn div a{color: #fff}
+#info.inventory article .loginBox li .pBtn div a{color: #fff;display: inline-block;width: 100%}
 #info.inventory article .loginBox li .pBtn div:last-child{margin-bottom: 0;}
 #info.inventory article .loginBox li .pBtn div.del{background-color: #df5353}
 #info.apply article .title{width: 140px;}
