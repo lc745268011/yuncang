@@ -20,6 +20,7 @@
     <title>我的存货</title>
 </head>
 <style type="text/css">
+    #info article .placeholder-parent{width: 414px!important;}
     .info {
         border: solid 1px silver;
     }
@@ -192,11 +193,12 @@
                 </li>
                 <li class="clearfix">
                     <div class="title fl">截止日期：</div>
-                    <input id="date" type="text" readonly/>
+                    <div id="date" class="fl"></div>
                 </li>
                 <li class="clearfix">
                     <div class="title fl">选择仓库：</div>
-                    <input  type="text" placeholder="请选择仓库" readonly class="depot" onclick="choose()" value="XXXXXX的仓库山东省青岛市市北区重庆南路268号XXXXXX的仓库山东省青岛市市北区重庆南路268号"/>
+                    <!--<input  type="text" placeholder="请选择仓库" readonly class="depot" onclick="choose()" value=""/>-->
+                    <div class="depot fl" onclick="choose()">请选择仓库</div>
                 </li>
                 <li class="clearfix">
                     <div class="title fl"></div>
@@ -341,7 +343,7 @@
         warehouse=$(obj).parent().find('p').eq(0).text();
         warehouse+='('+$(obj).parent().find('p').eq(1).text()+')';
         layer.closeAll();
-        $('.depot').val(warehouse)
+        $('.depot').text(warehouse)
     }
 
     $('section').click(function (e) {

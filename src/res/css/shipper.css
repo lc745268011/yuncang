@@ -27,14 +27,14 @@
 #info.inventory article .loginBox li .pImg{width: 240px;height: 180px;border-radius: 4px;background-color: #38a7f5;}
 #info.inventory article .loginBox li .pInfo{width: 335px;padding:0 28px;color: #666;font-size: 12px;line-height: 1.7}
 #info.inventory article .loginBox li .pBtn{width: 355px;border-left: 1px solid #dcdcdc;padding:0 70px;}
-#info.inventory article .loginBox li .pBtn div{width: 156px;margin: 0 auto;height: 38px;line-height: 38px;color: #fff;background-color: #38a7f5;text-align: center;border-radius: 4px;margin-bottom: 10px;}
+#info.inventory article .loginBox li .pBtn div{width: 156px;margin: 0 auto;height: 38px;line-height: 38px;background-color: #38a7f5;text-align: center;border-radius: 4px;margin-bottom: 10px;}
 #info.inventory article .loginBox li .pBtn div a{color: #fff;display: inline-block;width: 100%}
 #info.inventory article .loginBox li .pBtn div:last-child{margin-bottom: 0;}
-#info.inventory article .loginBox li .pBtn div.del{background-color: #df5353}
+#info.inventory article .loginBox li .pBtn div.del{background-color: #df5353;color: #fff}
 #info.apply article .title{width: 140px;}
-#info.apply article .select-menu-div,#info.apply article .select-menu-ul,#info.apply article li input{width: 414px; }
-#info.apply article .select-menu-div,#info.apply article li input{height: 40px;line-height: 38px; }
-#info.apply article li input{border-radius: 4px;border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
+#info.apply article .select-menu-div,#info.apply article .select-menu-ul,#info.apply article li input,#info.apply article li #date,#info.apply article li .depot{width: 414px; }
+#info.apply article .select-menu-div,#info.apply article li input,#info.apply article li #date,#info.apply article li .depot{height: 40px;line-height: 38px; }
+#info.apply article li input,#info.apply article li #date,#info.apply article li .depot{border-radius: 4px;border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
 #info.apply article li.clearfix{margin-bottom: 20px;}
 #info.apply article li .depot{width: 640px;}
 #info.apply article li .depot:hover,#info.apply article li #date:hover{cursor: pointer}
@@ -44,7 +44,7 @@
 #info.wait article .loginBox li .refuse div:first-child{color: #999;font-size: 18px;}
 #info.wait article .loginBox li .pBtn div.del{width: 154px;margin: 0 auto}
 #info.wait article .loginBox li .pBtn div.del:hover{cursor: pointer}
-#info.wait article .loginBox li .pBtn div:nth-child(2){color: #999;font-size: 12px;}
+#info.wait article .loginBox li .pBtn div.tipsMsg{color: #999;font-size: 12px;}
 #info.record article .rTitle{font-size: 18px;color: #333;font-weight: bold;margin-bottom: 30px;}
 #info.record article .recordList .rListTitle{display: table;color: #666;font-size: 16px;}
 #info.record article .recordList .rListTitle .line{width: 6px;height: 18px;background-color: #37a6f4;}
