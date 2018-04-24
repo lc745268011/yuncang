@@ -6,12 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../res/js/theme/default/layer.css">
     <link rel="stylesheet" href="../res/css/common.css">
     <link rel="stylesheet" href="../res/css/public.css">
     <link rel="stylesheet" href="../res/css/divSelect.css">
     <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     <script src="../res/js/jquery.placeholder.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="../res/js/layer.js"></script>
     <title>货主登录/注册</title>
 </head>
 <body>
@@ -39,24 +41,25 @@
                 <a href="./forgetPassword.html" class="forgetPass">忘记密码</a>
             </div>
             <div class="loginBox" id="reg">
-                <input type="text" placeholder="请输入手机号" class="fl code">
+                <input type="text" placeholder="请输入手机号" class="fl code" id="phone">
                 <div class="select-menu fl sendMsg">
                     <div class="select-menu-div">
                         <!--<input id="No1" id="No1" disabled class="select-menu-input"/>-->
                         <div id="No1" id="No1" disabled class="select-menu-input"></div>
                         <i class="fa fa-caret-down"></i>
                     </div>
-                    <ul class="select-menu-ul" >
-                        <li  class="select-this">货主</li>
-                        <li>库主</li>
+                    <ul class="select-menu-ul" id="type">
+                        <li  class="select-this" id="1">货主</li>
+                        <li id="2">库主</li>
                     </ul>
                 </div>
                 <div class="clearfix">
-                    <input type="text" placeholder="请输入验证码" class="fl code">
-                    <a href="javascript:;" class="fl sendMsg">发送验证码</a>
+                    <input type="text" placeholder="请输入验证码" class="fl code" id="code">
+                    <!--<a href="javascript:;" class="fl sendMsg" onclick="sendMsg(this)">发送验证码</a>-->
+                    <input type="button" class="fl sendMsg" value="发送验证码" onclick="sendMsg(this)">
                 </div>
-                <input type="password" placeholder="请设置登录密码">
-                <input type="button" value="立即注册" class="loginBtn">
+                <input type="password" placeholder="请设置登录密码" id="password">
+                <input type="button" value="立即注册" class="loginBtn" id="regBtn">
             </div>
         </div>
 
@@ -71,6 +74,43 @@
     $(function() {
         $("input").placeholder();
     });
+    /**
+     * 倒计时
+     */
+    var clock = '';
+    var nums = 60;
+    var btn;
+    function sendMsg(thisBtn) {
+        btn = thisBtn;
+        btn.disabled = true; //将按钮置为不可点击
+        btn.value = nums+'秒后可重新获取';
+        clock = setInterval(doLoop, 1000); //一秒执行一次
+    }
+    function doLoop()
+    {
+        nums--;
+        if(nums > 0){
+            btn.value = nums+'秒后可重新获取';
+        }else{
+            clearInterval(clock); //清除js定时器
+            btn.disabled = false;
+            btn.value = '点击发送验证码';
+            nums = 10; //重置时间
+        }
+    }
+    $('#regBtn').click(function () {
+        var phone=$('#phone').val(),
+            code=$('#code').val(),
+            password=$('#password').val(),
+            type=$('#type .select-this').attr('id');
+        $.post("/web/register','web/setuser/setuser",{phone:phone,code:code,password:password,type:type},function(result){
+            if(result.status==100){
+                layer.msg('注册成功');
+            }
+        });
+    })
+
+
 </script>
 <script src="../res/js/divSelect.js"></script>
 <style>
