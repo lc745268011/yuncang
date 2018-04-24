@@ -1,0 +1,37 @@
+.delBtb{
+    background-color: #df5353;
+    color: #fff;
+    padding: 10px 45px;
+    display: block;
+    border: 0;
+    border-radius: 4px;
+    margin-top: 23px;
+}
+
+.blueBtn{
+    background-color: #3aa8f5;
+    color: #fff;
+    padding: 10px 45px;
+    display: block;
+    border: 0;
+    border-radius: 4px;
+    margin-top: 23px;
+}
+
+.redBtn{
+    background-color: #df5353;
+    color: #fff;
+    padding: 10px 45px;
+    display: block;
+    border: 0;
+    border-radius: 4px;
+    margin-top: 23px;
+}
+
+.addressDetail{
+    margin-top: 20px;
+}
+
+.addHouse{
+    margin-left: 166px;
+}
