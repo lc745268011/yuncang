@@ -76,3 +76,4 @@
 #info.apply .box1 .chooseList div.vCenter:first-child p:last-child{font-size: 14px;color: #cccccc}
 #info.apply .box1 .chooseList div.vCenter:nth-child(2){width: 140px;padding: 0 20px;}
 #info.apply .box1 .chooseList div.vCenter:last-child{text-align: right}
+#info article .s2{display: none}
