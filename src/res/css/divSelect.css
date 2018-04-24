@@ -11,7 +11,7 @@
     border:1px solid #ddd;
     background:#fff;
     position:absolute;
-    z-index:1;
+    z-index:999;
 }
 .select-menu .select-menu-ul li{
     width: 100%;

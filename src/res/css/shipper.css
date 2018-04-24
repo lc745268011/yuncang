@@ -16,7 +16,7 @@
 #info article .inputBox{border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
 #info article .submitBtn,#info.apply article .submitBtn{width: 154px;height: 38px;text-align: center;color: #fff;background-color: #38a7f5;line-height: 38px;border: 0;border-radius: 4px;}
 #info.inventory article{padding: 30px 25px}
-#info.inventory article .add,#info.apply article .add{border: 1px solid #37a6f4;border-radius: 4px;width:104px;height:38px;text-align:center;color: #38a7f5;font-size: 14px;line-height: 36px;}
+#info.inventory article .add,#info.apply article .add,#info.record article .add{display:block;border: 1px solid #37a6f4;border-radius: 4px;width:104px;height:38px;text-align:center;color: #38a7f5;font-size: 14px;line-height: 36px;}
 #info.inventory article #tabs{margin-top: 14px;font-size: 14px;color: #333333}
 #info.inventory article #tabs li:hover{cursor: pointer;color: #38a7f5}
 #info.inventory article #tabs li:first-child{border-right: 1px solid #333333;margin-right: 5px;padding-right: 5px;}
@@ -27,15 +27,16 @@
 #info.inventory article .loginBox li .pImg{width: 240px;height: 180px;border-radius: 4px;background-color: #38a7f5;}
 #info.inventory article .loginBox li .pInfo{width: 335px;padding:0 28px;color: #666;font-size: 12px;line-height: 1.7}
 #info.inventory article .loginBox li .pBtn{width: 355px;border-left: 1px solid #dcdcdc;padding:0 70px;}
-#info.inventory article .loginBox li .pBtn div{width: 156px;height: 38px;line-height: 38px;color: #fff;background-color: #38a7f5;text-align: center;border-radius: 4px;margin-bottom: 10px;}
-#info.inventory article .loginBox li .pBtn div a{color: #fff}
+#info.inventory article .loginBox li .pBtn div{width: 156px;margin: 0 auto;height: 38px;line-height: 38px;background-color: #38a7f5;text-align: center;border-radius: 4px;margin-bottom: 10px;}
+#info.inventory article .loginBox li .pBtn div a{color: #fff;display: inline-block;width: 100%}
 #info.inventory article .loginBox li .pBtn div:last-child{margin-bottom: 0;}
-#info.inventory article .loginBox li .pBtn div.del{background-color: #df5353}
+#info.inventory article .loginBox li .pBtn div.del{background-color: #df5353;color: #fff}
 #info.apply article .title{width: 140px;}
-#info.apply article .select-menu-div,#info.apply article .select-menu-ul,#info.apply article li input{width: 414px; }
-#info.apply article .select-menu-div,#info.apply article li input{height: 40px;line-height: 38px; }
-#info.apply article li input{border-radius: 4px;border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
+#info.apply article .select-menu-div,#info.apply article .select-menu-ul,#info.apply article li input,#info.apply article li #date,#info.apply article li .depot{width: 414px; }
+#info.apply article .select-menu-div,#info.apply article li input,#info.apply article li #date,#info.apply article li .depot{height: 40px;line-height: 38px; }
+#info.apply article li input,#info.apply article li #date,#info.apply article li .depot{border-radius: 4px;border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
 #info.apply article li.clearfix{margin-bottom: 20px;}
+#info.apply article li .depot{width: 640px;}
 #info.apply article li .depot:hover,#info.apply article li #date:hover{cursor: pointer}
 #info.wait article .loginBox li .pBtn{padding: 0 60px;}
 #info.wait article .loginBox li .pBtn div{background-color: transparent;height: auto;margin-bottom: 0;width: auto}
@@ -43,4 +44,36 @@
 #info.wait article .loginBox li .refuse div:first-child{color: #999;font-size: 18px;}
 #info.wait article .loginBox li .pBtn div.del{width: 154px;margin: 0 auto}
 #info.wait article .loginBox li .pBtn div.del:hover{cursor: pointer}
-#info.wait article .loginBox li .pBtn div:nth-child(2){color: #999;font-size: 12px;}
+#info.wait article .loginBox li .pBtn div.tipsMsg{color: #999;font-size: 12px;}
+#info.record article .rTitle{font-size: 18px;color: #333;font-weight: bold;margin-bottom: 30px;}
+#info.record article .recordList .rListTitle{display: table;color: #666;font-size: 16px;}
+#info.record article .recordList .rListTitle .line{width: 6px;height: 18px;background-color: #37a6f4;}
+#info.record article .recordList .rListTitle span.name{padding-left: 6px;font-size: 18px;color: #37a6f4;font-weight: bold;}
+#info.record article .recordList table tr,#info.record article .recordList table{width: 100%}
+#info.record article .recordList table td,#info.record article .recordList table th{width: 33.3%;text-align: center;color: #333;padding: 14px 0;font-weight: normal}
+#info.record article .recordList table th{background-color: #ccc;font-size: 16px;}
+#info.record article .recordList table td{font-size: 14px;}
+#info.record article .recordList table tr{border-bottom: 1px solid #dcdcdc}
+#info.record article .recordList table tr.list td:last-child{color: #37a6f4;cursor: pointer}
+#info.record article .recordList table tr:last-child{border-bottom: 0}
+#info.record article .recordList table{border: 1px solid #dcdcdc;margin: 20px 0;}
+#info.record .box{width: 650px!important;height: 628px;}
+#info.record .boxTitle{display: table;background-color:#37a6f4;color: #fff;height: 40px;line-height: 40px;width: 100%;padding: 0 20px; }
+#info.record .boxTitle .closeBtn{text-align: right;}
+#info.record .boxTitle .vCenter{width: 50%}
+#info.record article .box table td, #info.record article .box table th{padding: 10px 0;font-size: 14px;}
+#info.record article .box .search{width: 210px;height: 38px;border: 1px solid #dcdcdc;border-radius: 4px;overflow: hidden;position: relative}
+#info.record article .box .search img{position: absolute;left: 10px;margin-top: 10px;}
+#info.record article .box .search input{border: 0;height: 36px;padding-left: 35px;padding-right: 10px;}
+#info.monitor article>p{color: #666;font-size: 16px;line-height: 1.8}
+#info.monitor article>p:last-child{margin-bottom: 24px;}
+#info.monitor article .recordList ul li{margin: 30px 30px 0 0}
+#info.apply .box1 .chooseList{display: table;width: 100%;margin-bottom: 10px;}
+#info.apply .box1 ul{height: 250px;}
+#info.apply .box1 .chooseList .chooseBtn{width:80px;height: 38px;line-height: 38px;color: #fff;background-color: #38a7f5;text-align: center;border-radius: 4px;font-size: 14px;}
+#info.apply .box1 .chooseList div.vCenter:first-child{width: 400px;padding: 0 20px;}
+#info.apply .box1 .chooseList div.vCenter:first-child p:first-child{font-size: 16px;color: #333}
+#info.apply .box1 .chooseList div.vCenter:first-child p:last-child{font-size: 14px;color: #cccccc}
+#info.apply .box1 .chooseList div.vCenter:nth-child(2){width: 140px;padding: 0 20px;}
+#info.apply .box1 .chooseList div.vCenter:last-child{text-align: right}
+#info article .s2{display: none}

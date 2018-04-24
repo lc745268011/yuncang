@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
     <link rel="stylesheet" href="../res/css/common.css">
     <link rel="stylesheet" href="../res/css/shipper.css">
+    <link rel="stylesheet" href="../res/css/keeper.css">
     <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-    <title>我的存货</title>
+    <title>我的仓库</title>
 </head>
 <body>
 <header>
@@ -21,24 +22,68 @@
         </div>
     </div>
 </header>
-<section class="inventory wait" id="info">
+<section class="inventory" id="info">
     <div class="mid_box clearfix">
         <aside class="fl">
             <div class="navTitle">
-                我是货主
+                我是库主
             </div>
             <ul>
                 <li><a href="./info.html">基本信息</a></li>
-                <li><a href="./inventory.html">我的存货</a></li>
-                <li class="on"><a href="#">待审核存货</a></li>
+                <li class="on"><a href="#">我的仓库</a></li>
+                <li><a href="./pendingApproval.html">待审核存货</a></li>
             </ul>
         </aside>
         <article class="fl clearfix">
             <div class="clearfix">
-                <a href="./apply.html" class="add fl">+ 我要存货</a>
+                <a href="./apply.html" class="add fl">+ 添加仓库</a>
+                <ul class="fr clearfix" id="tabs">
+                    <li class="on fl" onclick="tab(this)">进行中</li>
+                    <li class="fl" onclick="tab(this)">已到期</li>
+                </ul>
             </div>
             <div id="tabBoxs">
                 <div class="loginBox on">
+                    <ul>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">***大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>仓库洞数量：3</div>
+                                <div>仓库设计容量：2500斤</div>
+                                <div>仓库剩余容量：1000斤</div>
+                                <div>
+                                    <button class="delBtb js-delWarehouse">删除仓库</button>
+                                </div>
+
+                            </div>
+                            <div class="pBtn vCenter">
+                                <div><a href="./inventory.html">查看仓库使用情况</a></div>
+                                <div><a href="./monitor.html">查看监控/温湿度</a></div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">***大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>仓库洞数量：3</div>
+                                <div>仓库设计容量：2500斤</div>
+                                <div>仓库剩余容量：1000斤</div>
+                                <div>
+                                    <button class="delBtb js-delWarehouse">删除仓库</button>
+                                </div>
+
+                            </div>
+                            <div class="pBtn vCenter">
+                                <div><a href="./inventory.html">查看仓库使用情况</a></div>
+                                <div><a href="./monitor.html">查看监控/温湿度</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="loginBox">
                     <ul>
                         <li class="clearfix">
                             <img src="" alt="" class="pImg vCenter"/>
@@ -52,27 +97,9 @@
                                 <div>第三方监管：中国银行</div>
                                 <div>截止日期：2018-01-01</div>
                             </div>
-                            <div class="pBtn vCenter submit">
-                                <div>已提交申请</div>
-                                <div class="tipsMsg">您的存货申请提交给仓库库主，请耐心等待</div>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="" alt="" class="pImg vCenter"/>
-                            <div class="pInfo vCenter">
-                                <div class="pTitle">大蒜 <span>类型：红皮</span></div>
-                                <div>仓库名称：XXX的大型仓库</div>
-                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
-                                <div>所在仓库区域：1洞</div>
-                                <div>计划存放重量：250斤</div>
-                                <div>实际仓库存量：100斤</div>
-                                <div>第三方监管：中国银行</div>
-                                <div>截止日期：2018-01-01</div>
-                            </div>
-                            <div class="pBtn vCenter refuse">
-                                <div>已拒绝</div>
-                                <div class="tipsMsg">您的存货申请已被库主拒绝，请重新申请</div>
-                                <div class="del">删除</div>
+                            <div class="pBtn vCenter">
+                                <div><a href="./record.html">查看出入库记录</a></div>
+                                <div class="del"><a href="">删除</a></div>
                             </div>
                         </li>
                     </ul>
@@ -86,6 +113,8 @@
 <footer>
     <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
 </footer>
+<script src="../res/js/tab.js"></script>
+
 <script>
     $(function(){
         function footerPosition(){
@@ -101,6 +130,13 @@
         }
         footerPosition();
         $(window).resize(footerPosition);
+
+        //删除仓库按钮
+        $(".js-delWarehouse").click(function () {
+            if(confirm("确定要删除吗？")){
+                //删除代码，提交到后台然后刷新页面
+            }
+        })
     });
 </script>
 </body>

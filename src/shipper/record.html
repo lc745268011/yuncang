@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../res/js/theme/default/layer.css">
+    <link rel="stylesheet" href="../res/css/common.css">
+    <link rel="stylesheet" href="../res/css/shipper.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="../res/js/layer.js"></script>
+    <title>我的存货</title>
+</head>
+<body>
+<header class="noprint">
+    <div class="mid_box clearfix">
+        <div id="logo" class="fl"><a href="/"><img src="../res/img/logo.png" alt=""></a></div>
+        <div class="fr">
+            <a href="">退出</a>
+        </div>
+    </div>
+</header>
+<section class="inventory record" id="info">
+    <div class="mid_box clearfix">
+        <aside class="fl noprint">
+            <div class="navTitle">
+                我是货主
+            </div>
+            <ul>
+                <li><a href="./info.html">基本信息</a></li>
+                <li class="on"><a href="./inventory.html">我的存货</a></li>
+                <li><a href="./pendingApproval.html">待审核存货</a></li>
+            </ul>
+        </aside>
+        <article class="fl clearfix noprint">
+            <div class="clearfix">
+                <a href="javascript:;" onclick="javascript:history.back(-1)" class="add fl">返回</a>
+            </div>
+            <div class="rTitle">总入库500斤 | 总出库200斤 | 仓库存量300斤</div>
+            <div class="recordList">
+                <div class="rListTitle">
+                    <div class="line vCenter"></div>
+                    <span class="vCenter name">入库单</span>
+                </div>
+                <table>
+                    <tr>
+                        <th>日期</th>
+                        <th>入库重量</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr id="list1" class="list">
+                        <td>2018-01-02</td>
+                        <td>200斤</td>
+                        <td onclick="box(this,1)">查看标签</td>
+                    </tr>
+                    <tr id="list2" class="list">
+                        <td>2018-01-02</td>
+                        <td>200斤</td>
+                        <td onclick="box(this,2)">查看标签</td>
+                    </tr>
+                </table>
+                <div class="rListTitle">
+                    <div class="line vCenter"></div>
+                    <span class="vCenter name">出库单</span>
+                </div>
+                <table>
+                    <tr>
+                        <th>日期</th>
+                        <th>入库重量</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr id="list3" class="list">
+                        <td>2018-01-02</td>
+                        <td>200斤</td>
+                        <td>查看标签</td>
+                    </tr>
+                    <tr id="list4" class="list">
+                        <td>2018-01-02</td>
+                        <td>200斤</td>
+                        <td>查看标签</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="box recordList" style="display: none">
+                <div class="boxTitle">
+                    <div class="vCenter">查看标签</div>
+                    <div class="closeBtn vCenter"><img src="../res/img/closeBtn.png" alt="" onclick="layer.closeAll()"></div>
+                </div>
+                <div style="padding: 18px 10px;">
+                    <div style="display: table;width: 100%;" class="clearfix">
+                        <a class="add vCenter fl" href="javascript:window.print();">列表打印</a>
+                        <div class="vCenter fr">
+                            <div class="search">
+                                <img src="../res/img/search.png" alt="">
+                                <input type="text" placeholder="搜索标签">
+                            </div>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>日期</th>
+                            <th>重量</th>
+                            <th>入库时间</th>
+                        </tr>
+                        <tr>
+                            <td>8405ME23125498KA</td>
+                            <td>200斤</td>
+                            <td>2018-01-04 12:00</td>
+                        </tr>
+                        <tr>
+                            <td>8405ME23125498KA</td>
+                            <td>200斤</td>
+                            <td>2018-01-04 12:00</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </article>
+    </div>
+</section>
+<table id="printList">
+    <tr>
+        <th>日期</th>
+        <th>重量</th>
+        <th>入库时间</th>
+    </tr>
+    <tr>
+        <td>8405ME23125498KA</td>
+        <td>200斤</td>
+        <td>2018-01-04 12:00</td>
+    </tr>
+    <tr>
+        <td>8405ME23125498KA</td>
+        <td>200斤</td>
+        <td>2018-01-04 12:00</td>
+    </tr>
+    <tr>
+        <td>8405ME23125498KA</td>
+        <td>200斤</td>
+        <td>2018-01-04 12:00</td>
+    </tr>
+    <tr>
+        <td>8405ME23125498KA</td>
+        <td>200斤</td>
+        <td>2018-01-04 12:00</td>
+    </tr>
+</table>
+<style>
+    #printList{display: none}
+</style>
+<style type="text/css" media=print>
+    .noprint{display: none}
+    #printList{display: block}
+    table#printList tr,table#printList{width: 100%}
+    table#printList td,table#printList th{width: 33.3%;text-align: center;color: #333;padding: 14px 0;font-weight: normal}
+    table#printList th{background-color: #ccc;font-size: 16px;}
+    table#printList td{font-size: 14px;}
+    table#printList tr{border-bottom: 1px solid #dcdcdc}
+    table#printList tr.list td:last-child{color: #37a6f4;cursor: pointer}
+    table#printList tr:last-child{border-bottom: 0}
+    table#printList{border: 1px solid #dcdcdc;margin: 20px 0;}
+    table#printList th{background-color: #ccc;font-size: 16px;}
+</style>
+<footer>
+    <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
+</footer>
+
+<script>
+    $(function(){
+        function footerPosition(){
+            $("footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if(!(contentHeight > winHeight)){
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("footer").addClass("fixed-bottom");
+            } else {
+                $("footer").removeClass("fixed-bottom");
+            }
+        }
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
+    function box(obj,id) {
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true,
+            skin: 'box',
+            content: $('.box')
+        });
+    }
+</script>
+</body>
+</html>

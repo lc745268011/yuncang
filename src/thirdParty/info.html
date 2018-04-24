@@ -27,55 +27,37 @@
     <div class="mid_box clearfix">
         <aside class="fl">
             <div class="navTitle">
-                我是货主
+                第三方监管
             </div>
             <ul>
                 <li class="on"><a href="#">基本信息</a></li>
-                <li><a href="./inventory.html">我的存货</a></li>
-                <li><a href="./pendingApproval.html">待审核存货</a></li>
+                <li><a href="./inventory.html">我的监管</a></li>
             </ul>
         </aside>
         <article class="fl clearfix">
             <div class="clearfix">
-                <div class="title fl">货主类型：</div>
-                <div class="select-menu fl m70">
-                    <div class="select-menu-div">
-                        <div id="No1" disabled class="select-menu-input"></div>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                    <ul class="select-menu-ul" >
-                        <li  class="select-this" id="s1">个人</li>
-                        <li id="s2">机构</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="s1">
-                <div class="clearfix" style="margin-bottom: 30px;">
-                    <div class="title fl">姓名：</div>
-                    <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入姓名">
-                </div>
-                <div class="clearfix">
-                    <div class="title fl">身份证：</div>
-                    <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入身份证">
-                </div>
-            </div>
-            <div class="s2">
-                <div class="clearfix">
-                    <div class="title fl" style="margin-bottom: 30px;">机构名：</div>
-                    <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入机构名">
-                </div>
-                <div class="clearfix">
-                    <div class="title fl">机构代码：</div>
-                    <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入机构代码">
-                </div>
+                <div class="title fl">机构名称：</div>
+                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入机构名称">
             </div>
             <div class="clearfix">
-                <div class="title fl">手机号：</div>
-                <div class="fl select-menu m70">15568545125</div>
+                <div class="title fl">机构代码：</div>
+                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入机构代码">
             </div>
             <div class="clearfix">
-                <div class="title fl">备用手机号：</div>
-                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入手机号（选填）">
+                <div class="title fl">机构地址：</div>
+                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入机构地址">
+            </div>
+            <div class="clearfix">
+                <div class="title fl">联系人：</div>
+                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入联系人">
+            </div>
+            <div class="clearfix">
+                <div class="title fl">联系电话：</div>
+                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入联系电话">
+            </div>
+            <div class="clearfix">
+                <div class="title fl">官方网址：</div>
+                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入官方网址">
             </div>
             <div class="clearfix">
                 <div class="title fl">微信号：</div>
@@ -110,16 +92,6 @@
         }
         footerPosition();
         $(window).resize(footerPosition);
-        $('.select-menu-ul li').click(function () {
-            if($(this).attr('id')=='s1'){
-                $('.s2').hide();
-                $('.s1').show();
-            }else if($(this).attr('id')=='s2'){
-                $('.s1').hide();
-                $('.s2').show();
-            }
-        })
-
     });
 </script>
 <script src="../res/js/divSelect.js"></script>
