@@ -21,122 +21,16 @@
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=4e956e4fdfb0c22a69fc38eb0c1d5d3e&plugin=AMap.Autocomplete,AMap.PlaceSearch"></script>
     <title>我的存货</title>
 </head>
-<style type="text/css">
-    #info article .placeholder-parent{width: 414px!important;}
-    .info {
-        border: solid 1px silver;
+<style>
+    @media (min-width: 768px){
+        .form-group{width: 202px;}
+        .form-inline .form-control{width: 100%}
     }
-    div.info-top {
-        position: relative;
-        background: #fff;
-        border-bottom: 1px solid #CCC;
-        border-radius: 5px 5px 0 0;
-    }
-    div.info-top div {
-        display: inline-block;
-        color: #333333;
-        font-size: 14px;
-        font-weight: bold;
-        line-height: 31px;
-        padding: 0 10px;
-    }
-    div.info-top img {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        transition-duration: 0.25s;
-    }
-    div.info-top img:hover {
-        box-shadow: 0px 0px 5px #000;
-    }
-    div.info-middle {
-        font-size: 12px;
-        padding: 6px;
-        line-height: 20px;
-    }
-    div.info-bottom {
-        height: 0px;
-        width: 100%;
-        clear: both;
-        text-align: center;
-    }
-    div.info-bottom img {
-        position: relative;
-        z-index: 104;
-    }
-    span {
-        margin-left: 5px;
-        font-size: 11px;
-    }
-    .info-middle img {
-        float: left;
-        margin-right: 6px;
-    }
-    .amap-marker .marker-route {
-        position: absolute;
-        width: 40px;
-        height: 44px;
-        color: #e90000;
-        background: url(http://webapi.amap.com/theme/v1.3/images/newpc/poi-1.png) no-repeat;
-        cursor: pointer;
-    }
-    .amap-marker .marker-marker-bus-from {
-        background-position: -334px -180px;
-    }
-    .amap-sug-result{z-index: 99999999}
-    .introduce .map{position: relative;width: 955px;height: 250px;margin: 60px auto;margin-bottom: 45px;}
-    .introduce .introduce_tile_cn{margin-bottom: 20px;}
-    #tipinput{box-sizing: border-box;
-        border: 0;
-        padding: 9px 0;
-        border-left: 10px solid transparent;
-        border-right: 27px solid transparent;
-        line-height: 20px;
-        font-size: 16px;
-        height: 38px;
-        color: #333;
-        position: relative;
-        border-radius: 2px 0 0 2px;
-        float: left;
-        width: 329px;
-    }
-    #search-button {
-        pointer-events: auto;
-        background: url(http://webmap0.map.bdstatic.com/wolfman/static/common/images/new/searchbox_f175577.png) no-repeat 0 -76px #3385ff;
-        width: 57px;
-        height: 38px;
-        float: left;
-        border: 0;
-        padding: 0;
-        cursor: pointer;
-        border-radius: 0 2px 2px 0;
-        box-shadow: 1px 2px 1px rgba(0,0,0,.15);
-    }
-    .searchbox-content .searchbox-content-button.cancel-button {
-        background: url(http://webmap0.map.bdstatic.com/wolfman/static/common/images/new/searchbox_f175577.png) no-repeat 0 -38px;
-    }
-    .searchbox-content-button {
-        box-sizing: border-box;
-        float: left;
-        height: 38px;
-        width: 39px;
-        cursor: pointer;
-        position: relative;
-        background: url(http://webmap0.map.bdstatic.com/wolfman/static/common/images/new/searchbox_f175577.png) no-repeat 0 -37px #fff;
-    }
-    .introduce ul li {
-        width: 48%;
-        margin:0 1%;
-        float: left;
-        color: #fff;
-        height: auto;
-        min-height: 200px;
-        cursor: pointer;
-    }
-    .box1{padding: 20px;}
-    .map{height: 305px;margin-bottom: 20px;}
+    .form-group{width: 202px;float: left;margin-right: 15px;}
+    .form-inline .form-control{width: 100%}
+    .selPosition .placeholder-parent{margin-left: 166px!important;width: 414px!important;}
+    .apply#info article LI INPUT{width: 330px;}
 </style>
-
 <body>
 <header>
     <div class="mid_box clearfix">
@@ -184,7 +78,7 @@
                 <li class="clearfix">
                     <div class="title fl">仓库地址：</div>
                     <div class="selPosition form-inline">
-                        <div data-toggle="distpicker">
+                        <div data-toggle="distpicker" class="clearfix">
                             <div class="form-group">
                                 <label class="sr-only" for="province2">Province</label>
                                 <select class="form-control" id="province2" data-province="---- 选择省 ----"></select>
@@ -197,9 +91,10 @@
                                 <label class="sr-only" for="district2">District</label>
                                 <select class="form-control" id="district2" data-district="---- 选择区 ----"></select>
                             </div>
+                            <input type="text" class="addressDetail" placeholder="请输入详细地址">
+
                         </div>
                     </div>
-                    <input type="text" class="addressDetail" placeholder="请输入详细地址">
                     <button class="blueBtn addHouse  js-addHouse">添加仓库</button>
                 </li>
             </ul>

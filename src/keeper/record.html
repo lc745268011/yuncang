@@ -5,16 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../res/js/theme/default/layer.css">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
     <link rel="stylesheet" href="../res/css/common.css">
     <link rel="stylesheet" href="../res/css/shipper.css">
     <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-    <script src="../res/js/layer.js"></script>
     <title>我的存货</title>
 </head>
 <body>
-<header class="noprint">
+<header>
     <div class="mid_box clearfix">
         <div id="logo" class="fl"><a href="/"><img src="../res/img/logo.png" alt=""></a></div>
         <div class="fr">
@@ -22,151 +21,96 @@
         </div>
     </div>
 </header>
-<section class="inventory record" id="info">
+<section class="inventory" id="info">
     <div class="mid_box clearfix">
-        <aside class="fl noprint">
+        <aside class="fl">
             <div class="navTitle">
-                我是货主
+                我是库主
             </div>
             <ul>
                 <li><a href="./info.html">基本信息</a></li>
-                <li class="on"><a href="./myWarehouse.html">我的存货</a></li>
+                <li class="on"><a href="#">我的仓库</a></li>
                 <li><a href="./pendingApproval.html">待审核存货</a></li>
             </ul>
         </aside>
-        <article class="fl clearfix noprint">
+        <article class="fl clearfix">
             <div class="clearfix">
-                <a href="javascript:;" onclick="javascript:history.back(-1)" class="add fl">返回</a>
+                <a href="javascript:;" onclick="window.history.back(-1)" class="add fl">返回</a>
+                <ul class="fr clearfix" id="tabs">
+                    <li class="on fl" onclick="tab(this)">进行中</li>
+                    <li class="fl" onclick="tab(this)">已到期</li>
+                </ul>
             </div>
-            <div class="rTitle">总入库500斤 | 总出库200斤 | 仓库存量300斤</div>
-            <div class="recordList">
-                <div class="rListTitle">
-                    <div class="line vCenter"></div>
-                    <span class="vCenter name">入库单</span>
-                </div>
-                <table>
-                    <tr>
-                        <th>日期</th>
-                        <th>入库重量</th>
-                        <th>操作</th>
-                    </tr>
-                    <tr id="list1" class="list">
-                        <td>2018-01-02</td>
-                        <td>200斤</td>
-                        <td onclick="box(this,1)">查看标签</td>
-                    </tr>
-                    <tr id="list2" class="list">
-                        <td>2018-01-02</td>
-                        <td>200斤</td>
-                        <td onclick="box(this,2)">查看标签</td>
-                    </tr>
-                </table>
-                <div class="rListTitle">
-                    <div class="line vCenter"></div>
-                    <span class="vCenter name">出库单</span>
-                </div>
-                <table>
-                    <tr>
-                        <th>日期</th>
-                        <th>入库重量</th>
-                        <th>操作</th>
-                    </tr>
-                    <tr id="list3" class="list">
-                        <td>2018-01-02</td>
-                        <td>200斤</td>
-                        <td>查看标签</td>
-                    </tr>
-                    <tr id="list4" class="list">
-                        <td>2018-01-02</td>
-                        <td>200斤</td>
-                        <td>查看标签</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="box recordList" style="display: none">
-                <div class="boxTitle">
-                    <div class="vCenter">查看标签</div>
-                    <div class="closeBtn vCenter"><img src="../res/img/closeBtn.png" alt="" onclick="layer.closeAll()"></div>
-                </div>
-                <div style="padding: 18px 10px;">
-                    <div style="display: table;width: 100%;" class="clearfix">
-                        <a class="add vCenter fl" href="javascript:window.print();">列表打印</a>
-                        <div class="vCenter fr">
-                            <div class="search">
-                                <img src="../res/img/search.png" alt="">
-                                <input type="text" placeholder="搜索标签">
+            <div id="tabBoxs">
+                <div class="loginBox on">
+                    <ul>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">大蒜 <span>类型：红皮</span></div>
+                                <div>仓库名称：XXX的大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>所在仓库区域：1洞</div>
+                                <div>计划存放重量：250斤</div>
+                                <div>实际仓库存量：100斤</div>
+                                <div>第三方监管：中国银行</div>
+                                <div>截止日期：2018-01-01</div>
                             </div>
-                        </div>
-                    </div>
-                    <table>
-                        <tr>
-                            <th>日期</th>
-                            <th>重量</th>
-                            <th>入库时间</th>
-                        </tr>
-                        <tr>
-                            <td>8405ME23125498KA</td>
-                            <td>200斤</td>
-                            <td>2018-01-04 12:00</td>
-                        </tr>
-                        <tr>
-                            <td>8405ME23125498KA</td>
-                            <td>200斤</td>
-                            <td>2018-01-04 12:00</td>
-                        </tr>
-                    </table>
+                            <div class="pBtn vCenter">
+                                <div><a href="../shipper/record.html">查看出入库记录</a></div>
+                                <div><a href="./monitor.html">查看监控</a></div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">大蒜 <span>类型：红皮</span></div>
+                                <div>仓库名称：XXX的大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>所在仓库区域：1洞</div>
+                                <div>计划存放重量：250斤</div>
+                                <div>实际仓库存量：100斤</div>
+                                <div>第三方监管：中国银行</div>
+                                <div>截止日期：2018-01-01</div>
+                            </div>
+                            <div class="pBtn vCenter">
+                                <div><a href="../shipper/record.html">查看出入库记录</a></div>
+                                <div><a href="./monitor.html">查看监控</a></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-
+                <div class="loginBox">
+                    <ul>
+                        <li class="clearfix">
+                            <img src="" alt="" class="pImg vCenter"/>
+                            <div class="pInfo vCenter">
+                                <div class="pTitle">大蒜 <span>类型：红皮</span></div>
+                                <div>仓库名称：XXX的大型仓库</div>
+                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                                <div>所在仓库区域：1洞</div>
+                                <div>计划存放重量：250斤</div>
+                                <div>实际仓库存量：100斤</div>
+                                <div>第三方监管：中国银行</div>
+                                <div>截止日期：2018-01-01</div>
+                            </div>
+                            <div class="pBtn vCenter">
+                                <div><a href="../shipper/record.html">查看出入库记录</a></div>
+                                <div class="del"><a href="">删除</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
         </article>
     </div>
+
 </section>
-<table id="printList">
-    <tr>
-        <th>日期</th>
-        <th>重量</th>
-        <th>入库时间</th>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-</table>
-<style>
-    #printList{display: none}
-</style>
-<style type="text/css" media=print>
-    .noprint{display: none}
-    #printList{display: block}
-    table#printList tr,table#printList{width: 100%}
-    table#printList td,table#printList th{width: 33.3%;text-align: center;color: #333;padding: 14px 0;font-weight: normal}
-    table#printList th{background-color: #ccc;font-size: 16px;}
-    table#printList td{font-size: 14px;}
-    table#printList tr{border-bottom: 1px solid #dcdcdc}
-    table#printList tr.list td:last-child{color: #37a6f4;cursor: pointer}
-    table#printList tr:last-child{border-bottom: 0}
-    table#printList{border: 1px solid #dcdcdc;margin: 20px 0;}
-    table#printList th{background-color: #ccc;font-size: 16px;}
-</style>
 <footer>
     <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
 </footer>
+<script src="../res/js/tab.js"></script>
 
 <script>
     $(function(){
@@ -184,16 +128,6 @@
         footerPosition();
         $(window).resize(footerPosition);
     });
-    function box(obj,id) {
-        layer.open({
-            type: 1,
-            title: false,
-            closeBtn: 0,
-            shadeClose: true,
-            skin: 'box',
-            content: $('.box')
-        });
-    }
 </script>
 </body>
 </html>
