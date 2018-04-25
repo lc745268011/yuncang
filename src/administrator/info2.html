@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../res/css/common.css">
+    <link rel="stylesheet" href="../res/css/shipper.css">
+    <link rel="stylesheet" href="../res/css/divSelect.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="../res/js/jquery.placeholder.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <title>基本信息</title>
+</head>
+<body>
+<header>
+    <div class="mid_box clearfix">
+        <div id="logo" class="fl"><a href="/"><img src="../res/img/logo.png" alt=""></a></div>
+        <div class="fr">
+            <a href="">退出</a>
+        </div>
+    </div>
+</header>
+<section class="info" id="info">
+    <div class="mid_box clearfix">
+        <aside class="fl noprint">
+            <div class="navTitle">
+                我是管理员
+            </div>
+            <ul>
+                <li><a href="./shipper.html">管理货主</a></li>
+                <li class="on"><a href="./keeper.html">管理库主</a></li>
+                <li><a href="./thirdParty.html">管理第三方监管</a></li>
+            </ul>
+        </aside>
+        <article class="fl clearfix">
+            <div class="clearfix">
+                <a href="javascript:;" onclick="javascript:history.back(-1)" class="add fl">返回</a>
+            </div>
+            <div class="clearfix">
+                <div class="title fl">库主类型：</div>
+                <div class="select-menu fl m70">
+                    <div class="select-menu-div">
+                        <div id="No1" disabled class="select-menu-input"></div>
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                    <ul class="select-menu-ul" >
+                        <li  class="select-this" id="s1">个人</li>
+                        <li id="s2">机构</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="s1">
+                <div class="clearfix" style="margin-bottom: 30px;">
+                    <div class="title fl">姓名：</div>
+                    <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入姓名">
+                </div>
+                <div class="clearfix">
+                    <div class="title fl">身份证：</div>
+                    <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入身份证">
+                </div>
+            </div>
+            <div class="s2">
+                <div class="clearfix">
+                    <div class="title fl" style="margin-bottom: 30px;">机构名：</div>
+                    <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入机构名">
+                </div>
+                <div class="clearfix">
+                    <div class="title fl">机构代码：</div>
+                    <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入机构代码">
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="title fl">手机号：</div>
+                <div class="fl select-menu m70">15568545125</div>
+            </div>
+            <div class="clearfix">
+                <div class="title fl">备用手机号：</div>
+                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入手机号（选填）">
+            </div>
+            <div class="clearfix">
+                <div class="title fl">微信号：</div>
+                <input type="text" class="fl select-menu m70 inputBox" placeholder="请输入微信号（选填）">
+            </div>
+            <div class="clearfix">
+                <div class="title fl"></div>
+                <input type="button" value="保存" class="submitBtn">
+            </div>
+        </article>
+    </div>
+
+</section>
+<footer>
+    <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
+</footer>
+<script>
+    $(function() {
+        $("input").placeholder();
+    });
+    $(function(){
+        function footerPosition(){
+            $("footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if(!(contentHeight > winHeight)){
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("footer").addClass("fixed-bottom");
+            } else {
+                $("footer").removeClass("fixed-bottom");
+            }
+        }
+        footerPosition();
+        $(window).resize(footerPosition);
+        $('.select-menu-ul li').click(function () {
+            if($(this).attr('id')=='s1'){
+                $('.s2').hide();
+                $('.s1').show();
+            }else if($(this).attr('id')=='s2'){
+                $('.s1').hide();
+                $('.s2').show();
+            }
+        })
+
+    });
+</script>
+<script src="../res/js/divSelect.js"></script>
+</body>
+</html>
