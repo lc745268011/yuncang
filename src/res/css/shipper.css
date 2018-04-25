@@ -16,7 +16,7 @@
 #info article .inputBox{border: 1px solid #dcdcdc;padding: 0 25px;font-size: 14px;}
 #info article .submitBtn,#info.apply article .submitBtn{width: 154px;height: 38px;text-align: center;color: #fff;background-color: #38a7f5;line-height: 38px;border: 0;border-radius: 4px;}
 #info.inventory article{padding: 30px 25px}
-#info.inventory article .add,#info.apply article .add,#info.record article .add{display:block;border: 1px solid #37a6f4;border-radius: 4px;width:104px;height:38px;text-align:center;color: #38a7f5;font-size: 14px;line-height: 36px;}
+#info.inventory article .add,#info.apply article .add,#info.record article .add,#info.info article .add{display:block;border: 1px solid #37a6f4;border-radius: 4px;width:104px;height:38px;text-align:center;color: #38a7f5;font-size: 14px;line-height: 36px;}
 #info.inventory article #tabs{margin-top: 14px;font-size: 14px;color: #333333}
 #info.inventory article #tabs li:hover{cursor: pointer;color: #38a7f5}
 #info.inventory article #tabs li:first-child{border-right: 1px solid #333333;margin-right: 5px;padding-right: 5px;}

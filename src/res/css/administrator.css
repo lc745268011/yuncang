@@ -1,0 +1,5 @@
+#info.record .box{width: auto!important;}
+#info.record .box .add{border: 0;font-size: 18px;color: #333}
+#info.record article .box table td, #info.record article .box table th{width: auto;padding: 10px 15px}
+#info.record article .box table td.manage,#info.record article .box table td.manage a{color: #37a6f4}
+#info.apply article li.clearfix div{height: 40px;line-height: 40px;}
