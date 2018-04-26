@@ -106,12 +106,12 @@
         font-size: 14px;
         font-weight: bold;
         line-height: 31px;
-        padding: 0 10px;
+        padding: 0 25px 0 10px;
     }
     div.info-top img {
         position: absolute;
         top: 10px;
-        right: 10px;
+        right: 5px;
         transition-duration: 0.25s;
     }
     div.info-top img:hover {
@@ -264,10 +264,9 @@
     function geocoder_CallBack(data) {
         //地理编码结果数组
         var geocode = data.geocodes[0];
-            addMarker(geocode);
             var circle = new AMap.Circle({
                 center: new AMap.LngLat(geocode.location.lng, geocode.location.lat),// 圆心位置
-                radius: 1000, //半径
+                radius: 10000, //半径
                 strokeColor: "#FF33FF", //线颜色
                 strokeOpacity: 0.2, //线透明度
                 strokeWeight: 3,    //线宽
@@ -281,13 +280,13 @@
                     {"x":120.033211,"y": 36.276912},
                     {"x":116.397428,"y": 39.920213},
                     {"x":116.403322,"y": 39.922282},
-                    {"x":116.403322,"y": 39.920249}
+                    {"x":120.033941,"y": 36.277622}
                 ],
                 "info":[
                     {"title":"123","content":234},
                     {"title":"133","content":254},
                     {"title":"143","content":244},
-                    {"title":"153","content":234},
+                    {"title":"0","content":234},
                 ]
             }
 
@@ -301,22 +300,28 @@
                         position: myLngLat,
                         map: map
                     });
+                    addMarker(myLngLat);
+
                 }
+
             }
-            console.log(title)
 
             circle.setMap(map);//显示圆圈
             map.setFitView();//根据地图上添加的覆盖物分布情况，自动缩放地图到合适的视野级别
+            // addMarker(geocode);
 
     }
 
     function addMarker(d) {
-        var marker = new AMap.Marker({
+        /*var marker = new AMap.Marker({
             map: map,
             position: [ d.location.getLng(),  d.location.getLat()]
+        });*/
+        var marker = new AMap.Marker({
+            map: map,
+            position: [ d.lng,  d.lat]
         });
         var title1=title;
-
         var content1=content
         var infoWindow = new AMap.InfoWindow({
             isCustom: true,  //使用自定义窗体
