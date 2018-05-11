@@ -5,6 +5,7 @@ $(function(){
         $(".select-menu-input").eq(index).text($(".select-this").eq(index).html());//在输入框中自动填充第一个选项的值
         $(".select-menu-div").eq(index).on("click",function(e){
             e.stopPropagation();
+            $('.layui-laydate').remove()
             if($(".select-menu-ul").eq(index).css("display")==="block"){
                 $(".select-menu-ul").eq(index).hide();
                 $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");

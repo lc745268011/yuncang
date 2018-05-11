@@ -1,0 +1,27 @@
+html,body{height: 100%}
+.vCenter{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webki-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center; }
+body{background: #f7f7f7}
+#menu{padding: 0.35rem 0.28rem}
+#menu ul li{font-size: 0.25rem;color: #333;padding-left: 0.3rem;margin-top: 0.2rem}
+#menu ul li.title{font-size: 0.3rem;padding-left: 0}
+#menu ul li.on{color: #37a6f4}
+article{padding: 0 0.28rem}
+.select-menu-ul{width: 6.96rem}
+.select-menu,.spinfo .select-menu-div{height: 0.76rem;line-height: 0.76rem;background: #fff;width: 100%;}
+.select-menu-input{font-size:0.26rem;line-height: 0.76rem;padding: 0 0.3rem;}
+input.select-menu{font-size:0.26rem;border: 1px solid #dcdcdc;margin-top: 0.3rem;border-radius: 0.08rem;overflow: hidden;padding: 0 0.3rem}
+.m70{margin-top: 0.3rem;}
+.spinfo .phone div{background: transparent;padding: 0 0.3rem;margin-bottom: -0.3rem;font-size:0.26rem;height: 0.98rem;line-height: 0.98rem}
+.spinfo .submitBtn{height:0.78rem;color:#fff;background: #3aa8f5;width: 100%;border: 0;border-radius: 0.08rem;margin: 0.28rem 0;font-size: 0.3rem}
+html.mm-opened #mask{-webkit-transition: none 0.4s ease;
+    -moz-transition: none 0.4s ease;
+    -ms-transition: none 0.4s ease;
+    -o-transition: none 0.4s ease;
+     transition: none 0.4s ease;
+     -webkit-transition-property: top, right, bottom, left, border, -webkit-transform;
+    -moz-transition-property: top, right, bottom, left, border, -moz-transform;
+    -ms-transition-property: top, right, bottom, left, border, -ms-transform;
+    -o-transition-property: top, right, bottom, left, border, -o-transform;
+    transition-property: top, right, bottom, left, border, transform;
+    right: 0%;}
+html.mm-opened #mask.show{right: 45%;width: 100%}
