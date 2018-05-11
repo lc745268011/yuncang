@@ -25,3 +25,13 @@ html.mm-opened #mask{-webkit-transition: none 0.4s ease;
     transition-property: top, right, bottom, left, border, transform;
     right: 0%;}
 html.mm-opened #mask.show{right: 45%;width: 100%}
+.whList{background: #fff;}
+.whList li{margin: 0 0.3rem;width: 6.9rem;border-bottom: 1px solid #dcdcdc;}
+.whList li .left{width: 80%}
+.whList li .right{width: 20%;text-align: right;}
+.whList li .right button{width: 1.04rem;height: 0.5rem;background: #3aa8f5;color: #fff;text-align: center;border: 0;border-radius: 0.08rem}
+.whList li{margin-bottom: 0.2rem;padding-bottom: 0.2rem}
+.whList li .left .whName{font-size: 0.3rem;color: #333}
+.whList li .left .whAddr{font-size: 0.26rem;color: #ccc}
+.whList li .left .whWeight{font-size: 0.26rem;color: #333}
+.whList li:last-child{border-bottom: 0}
