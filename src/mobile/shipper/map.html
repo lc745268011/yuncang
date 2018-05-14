@@ -36,20 +36,25 @@
 <div id="page" class="spinfo">
     <div id="mask" style="height: 100%;position: fixed;z-index:99;top: 0;background: rgba(0,0,0,0.5)"></div>
 
-    <div class="mheader" id="header">
-        <span>{$title}</span>
-        <a href="#menu"></a>
+    <div class="mheader vCenter" id="header">
+        <div class="tabs h-div">
+            <img src="../../res/img/back.png" alt="" class="back" onclick="javascript:history.back(-1)">
+        </div>
+        <span style="flex: 1">{$title}</span>
+        <div class="h-div">
+            <a href="#menu"></a>
+        </div>
     </div>
     <nav id="menu">
         <ul>
             <li class="title">我是货主</li>
-            <li class="on">基本信息</li>
-            <li>我的存货</li>
-            <li>待审核存货</li>
+            <li><a href="./info.html">基本信息</a></li>
+            <li class="on"><a href="./inventory.html">我的存货</a></li>
+            <li><a href="./pendingApproval.html">待审核存货</a></li>
             <li class="title">我是库主</li>
-            <li>基本信息</li>
-            <li>我的存货</li>
-            <li>待审核存货</li>
+            <li><a href="">基本信息</a></li>
+            <li><a href="">我的存货</a></li>
+            <li><a href="">待审核存货</a></li>
         </ul>
     </nav>
     <article>
@@ -68,12 +73,12 @@
         <ul class="whList">
             <li class="vCenter">
                 <div class="left">
-                    <div class="whName">XXXXXX的仓库</div>
+                    <div class="whName">XXXXXX的仓库1</div>
                     <div class="whAddr">山东省青岛市市北区重庆南路268号</div>
                     <div class="whWeight">剩余：500斤</div>
                 </div>
                 <div class="right">
-                    <button>选择</button>
+                    <button onclick="choose(this)">选择</button>
                 </div>
             </li>
             <li class="vCenter">
@@ -83,7 +88,7 @@
                     <div class="whWeight">剩余：500斤</div>
                 </div>
                 <div class="right">
-                    <button>选择</button>
+                    <button onclick="choose(this)">选择</button>
                 </div>
             </li>
         </ul>
@@ -126,7 +131,7 @@
                 icon: new AMap.Icon({
                     size: new AMap.Size(40, 50),
                     cour:1,
-                    image: "__img__/point.png"     //自定义的标记图片样式(图片需自己准备)
+                    image: "../../res/img/point.png"     //自定义的标记图片样式(图片需自己准备)
                 })
             }); break;
             default: marker=new AMap.Marker({
@@ -134,7 +139,7 @@
                 map:map,
                 icon: new AMap.Icon({
                     size: new AMap.Size(40, 50),
-                    image: "__img__/point.png",
+                    image: "../../res/img/point.png",
                     cour:7,
                 })
             }); break;
@@ -274,6 +279,14 @@
         map.setZoom(13);
     }
 
+</script>
+<script>
+    function choose(obj) {
+        var whName = $(obj).parents('li').find('.whName').text();
+        var whAddr = $(obj).parents('li').find('.whAddr').text();
+        var whInfo =whName+'('+whAddr+')';
+        location.href='./apply.html?whInfo='+whInfo;
+    }
 </script>
 </body>
 </html>

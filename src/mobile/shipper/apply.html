@@ -33,20 +33,24 @@
 <div id="page" class="spinfo">
     <div id="mask" style="height: 100%;position: fixed;z-index:99;top: 0;background: rgba(0,0,0,0.5)"></div>
 
-    <div class="mheader" id="header">
-        <span>{$title}</span>
-        <a href="#menu"></a>
+    <div class="mheader vCenter" id="header">
+        <div class="tabs h-div">
+        </div>
+        <span style="flex: 1">申请存货</span>
+        <div class="h-div">
+            <a href="#menu"></a>
+        </div>
     </div>
     <nav id="menu">
         <ul>
             <li class="title">我是货主</li>
-            <li class="on">基本信息</li>
-            <li>我的存货</li>
-            <li>待审核存货</li>
+            <li><a href="./info.html">基本信息</a></li>
+            <li class="on"><a href="./inventory.html">我的存货</a></li>
+            <li><a href="./pendingApproval.html">待审核存货</a></li>
             <li class="title">我是库主</li>
-            <li>基本信息</li>
-            <li>我的存货</li>
-            <li>待审核存货</li>
+            <li><a href="">基本信息</a></li>
+            <li><a href="">我的存货</a></li>
+            <li><a href="">待审核存货</a></li>
         </ul>
     </nav>
     <article>
@@ -81,7 +85,7 @@
             <input type="text" class="select-menu m70 inputBox" placeholder="请选择截止日期" id="date">
         </div>
         <div>
-            <input type="text" class="select-menu m70 inputBox" placeholder="请选择仓库">
+            <input type="text" class="select-menu m70 inputBox" placeholder="请选择仓库" id="whInfo" onclick="location.href='./map.html'" readonly>
         </div>
         <div>
             <div class="title fl"></div>
@@ -113,6 +117,14 @@
         e.stopPropagation();
         $('.layui-laydate').remove()
     });
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]);
+        return null;
+    }
+    var whInfo=getQueryString("whInfo");
+    $('#whInfo').val(whInfo)
 </script>
 </body>
 </html>
