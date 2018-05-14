@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../res/css/common.css">
+    <link rel="stylesheet" href="../../res/css/demo.css">
+    <link rel="stylesheet" href="../../res/css/jquery.mmenu.css">
+    <link rel="stylesheet" href="../../res/css/mobile.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="../../res/js/jquery.mmenu.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('nav#menu').mmenu({
+                classes: 'mm-light'
+            });
+        });
+    </script>
+    <style>
+        .form-group{margin-top: 0.3rem;margin-bottom: 0}
+
+    </style>
+</head>
+<body>
+<div id="page" class="spinfo">
+    <div id="mask" style="height: 100%;position: fixed;z-index:99;top: 0;background: rgba(0,0,0,0.5)"></div>
+
+    <div class="mheader vCenter" id="header">
+        <div class="tabs h-div">
+            <img src="../../res/img/back.png" alt="" class="back" onclick="javascript:history.back(-1)">
+        </div>
+        <span style="flex: 1">添加仓库</span>
+        <div class="h-div">
+            <a href="#menu"></a>
+        </div>
+    </div>
+    <nav id="menu">
+        <ul>
+            <li class="title">我是货主</li>
+            <li><a href="./info.html">基本信息</a></li>
+            <li class="on"><a href="./inventory.html">我的存货</a></li>
+            <li><a href="./pendingApproval.html">待审核存货</a></li>
+            <li class="title">我是库主</li>
+            <li><a href="">基本信息</a></li>
+            <li><a href="">我的存货</a></li>
+            <li><a href="">待审核存货</a></li>
+        </ul>
+    </nav>
+    <article>
+        <div>
+            <img src="../../res/img/add.png" alt="" id="preview">
+            <input type="file" onchange="preview(this)" id="aaa" style="display: none"/>
+        </div>
+        <div>
+            <input type="text" class="select-menu m70 inputBox" placeholder="请输入仓库名称">
+        </div>
+        <div>
+            <input type="text" class="select-menu m70 inputBox" placeholder="请输入洞数量">
+        </div>
+        <div>
+            <input type="text" class="select-menu m70 inputBox" placeholder="仓库总容量">
+        </div>
+        <div>
+            <div class="selPosition form-inline">
+                <div data-toggle="distpicker" class="clearfix">
+                    <div class="form-group">
+                        <label class="sr-only" for="province2">Province</label>
+                        <select class="form-control" id="province2" data-province="---- 选择省 ----"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="city2">City</label>
+                        <select class="form-control" id="city2" data-city="---- 选择市 ----"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="district2">District</label>
+                        <select class="form-control" id="district2" data-district="---- 选择区 ----"></select>
+                    </div>
+                    <input type="text" class="addressDetail form-group select-menu" placeholder="请输入详细地址">
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="title fl"></div>
+            <input type="button" value="申请" class="submitBtn">
+        </div>
+    </article>
+</div>
+<script>
+    (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        }
+    )(document, window);
+</script>
+<!--三级联动地址选择-->
+<script src="../../res/static/distpicker/distpicker.data.js"></script>
+<script src="../../res/static/distpicker/distpicker.js"></script>
+<script src="../../res/static/distpicker/main.js"></script>
+<script>
+    $('#preview').click(function () {
+        $('#aaa').click()
+    });
+    function preview(file) {
+        var prevDiv = $('#preview');
+        if (file.files && file.files[0]) {
+            if(file.files[0].size / 1024>1000){
+                layer.msg('请上传小于2M的图片',{icon:5});
+                return false;
+            }
+            var type=file.value.substring(file.value.lastIndexOf(".")).toLowerCase();
+            if(type!=".jpg"&&type!=".gif"&&type!=".jpeg"&& type!=".png"){
+                layer.msg('请上传正确图片格式',{icon:5});
+                return false;
+            }
+            var reader = new FileReader();
+            reader.onload = function(evt) {
+                prevDiv.attr('src',evt.target.result);
+            }
+            reader.readAsDataURL(file.files[0]);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main.css?v=1.0?v=1.0"/>
+    <link rel="stylesheet" href="../../res/css/common.css">
+    <link rel="stylesheet" href="../../res/css/demo.css">
+    <link rel="stylesheet" href="../../res/css/jquery.mmenu.css">
+    <link rel="stylesheet" href="../../res/css/mobile.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="../../res/js/jquery.mmenu.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('nav#menu').mmenu({
+                classes: 'mm-light'
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="page" class="spinfo">
+    <div id="mask" style="height: 100%;position: fixed;z-index:99;top: 0;background: rgba(0,0,0,0.5)"></div>
+
+    <div class="mheader vCenter" id="header">
+        <div class="tabs h-div">
+        </div>
+        <span style="flex: 1">我的存货</span>
+        <div class="h-div">
+            <a href="#menu"></a>
+        </div>
+    </div>
+    <nav id="menu">
+        <ul>
+            <li class="title">我是货主</li>
+            <li><a href="./info.html">基本信息</a></li>
+            <li class="on"><a href="./inventory.html">我的存货</a></li>
+            <li><a href="./pendingApproval.html">待审核存货</a></li>
+            <li class="title">我是库主</li>
+            <li><a href="">基本信息</a></li>
+            <li><a href="">我的存货</a></li>
+            <li><a href="">待审核存货</a></li>
+        </ul>
+    </nav>
+    <article>
+        <div id="tabBoxs">
+            <ul class="loginBox on">
+                <li>
+                    <div class="top vCenter">
+                        <div class="topLeft vCenter">
+                            <img src="" alt="">
+                            <div>
+                                <div class="name">仓库名称</div>
+                            </div>
+                        </div>
+                        <div class="topRight">
+                            <div><a href="./record.html">查看出入库记录</a></div>
+                            <div><a href="./monitor.html">查看监控</a></div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                            <div>仓库地址：山东省济宁市金乡县太原路122号</div>
+                            <div>仓库洞数量：3</div>
+                            <div class="vCenter">
+                                <div>
+                                    <div>仓库设计容量：5000斤</div>
+                                    <div>仓库已用容量：1000斤</div>
+                                </div>
+
+                                <div>
+                                    <div class="redBtn">删除仓库</div>
+                                </div>
+                            </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div style="height: 1.2rem"></div>
+        <div class="applyBtn"><a href="./apply.html">添加仓库</a></div>
+    </article>
+</div>
+<script src="../../res/js/laydate.js"></script>
+<script>
+    (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        }
+    )(document, window);
+    $('.tabs span').click(function () {
+        $('#tabs').slideDown(function () {
+            $('.tabs i').addClass('rotate')
+        });
+    });
+    $('#tabs li').click(function () {
+        $('.tabs span').text($(this).text());
+        $('#tabs').slideUp(function () {
+            $('.tabs i').removeClass('rotate')
+
+        });
+    })
+</script>
+</body>
+</html>

@@ -41,16 +41,16 @@ html.mm-opened #mask.show{right: 45%;width: 100%}
 .loginBox li{padding:0.24rem 0.3rem;background: #fff;border: 1px solid #dcdcdc;border-radius: 0.08rem;margin-top: 0.3rem}
 .loginBox li .top{display: flex;justify-content: space-between;}
 .loginBox li .top .topLeft img{width: 1.5rem;height: 1.1rem;background: #3aa8f5;margin-right: 0.3rem}
-.loginBox li .top .topRight div{width: 1.94rem;height: 0.5rem;line-height: 0.5rem;text-align: center;background:#3aa8f5;color: #fff;font-size: 0.22rem;border-radius: 0.08rem;margin-bottom: 0.12rem }
+.loginBox li .top .topRight div,.loginBox li .bottom div.redBtn{width: 1.94rem;height: 0.5rem;line-height: 0.5rem;text-align: center;background:#3aa8f5;color: #fff;font-size: 0.22rem;border-radius: 0.08rem;margin-bottom: 0.12rem }
 .loginBox li .top .topRight div a{color: #fff;}
 .loginBox li .bottom{color: #666;font-size: 0.22rem;}
-.loginBox li .top .topLeft .name{font-size: 0.25rem;color: #333}
+.loginBox li .top .topLeft .name{font-size: 0.25rem;color: #333;font-weight: bold}
 .loginBox li .top .topLeft .type{font-size: 0.22rem;color: #999}
 .tabs span{left: 0.3rem;font-size: 0.25rem;}
 #tabs{display: none;position: absolute;top: 0.88rem;background: #fff;font-size: 0.25rem;left: 0;border: 1px solid #dcdcdc}
 #tabs li{padding: 0.3rem 0.4rem;float: none;border-bottom: 1px solid #dcdcdc;line-height: normal}
 #tabs li:last-child{border-bottom: 0}
-.loginBox li .top .topRight div.redBtn{background: #df5353;}
+.loginBox li .top .topRight div.redBtn,.loginBox li .bottom div.redBtn{background: #df5353;color: #fff}
 .tabs i{left: 1.2rem;font-siz: 0.25rem;transition: transform 0.4s ease-out;margin-left: 0.1rem}
 .tabs i.rotate{transform:rotate(180deg);}
 .h-div{width: 1.2rem;}
@@ -73,3 +73,5 @@ html.mm-opened #mask.show{right: 45%;width: 100%}
 .monitor li{background: #fff;color: #3aa8f5;border: 1px solid #3aa8f5;border-radius: 0.08rem;display: inline-block;margin-right: 0.16rem;width: 1.56rem;height: 0.52rem;text-align: center;margin-top: 0.2rem;}
 .monitor li:nth-child(4n){margin-right: 0}
 .back{width: 0.17rem;}
+.loginBox li .bottom .vCenter{display: flex;justify-content: space-between;}
+#preview{width: 6.94rem;height: 3.16rem;margin-top: 0.3rem}
