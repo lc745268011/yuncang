@@ -30,16 +30,18 @@
                 我是管理员
             </div>
             <ul>
-                <li class="on"><a href="./shipper.html">管理货主</a></li>
-                <li><a href="./keeper.html">管理库主</a></li>
-                <li><a href="./thirdParty.html">管理第三方监管</a></li>
+                <li class="on"><a href="./shipper.html">人员管理</a></li>
+                <li><a href="./good2.html">货物管理</a></li>
+                <li><a href="./inventory.html">仓库管理</a></li>
+                <li><a href="./inventory.html">货物品类管理</a></li>
+                <li><a href="./thirdParty.html">标签搜索</a></li>
             </ul>
         </aside>
         <article class="fl clearfix noprint">
             <div class="box recordList">
-                <div style="padding: 18px 10px;">
+                <div style="padding: 0 10px;">
                     <div style="display: table;width: 100%;" class="clearfix">
-                        <div class="add vCenter fl">管理货主</div>
+                        <div class="add vCenter fl">人员管理</div>
                         <div class="vCenter fr">
                             <div class="search">
                                 <img src="../res/img/search.png" alt="">
@@ -49,28 +51,32 @@
                     </div>
                     <table>
                         <tr>
-                            <th>类型</th>
+                            <th>人员类型</th>
                             <th>姓名/机构名</th>
-                            <th>身份证/机构代码</th>
                             <th>手机号</th>
-                            <th>微信号</th>
+                            <th>注册时间</th>
                             <th>操作</th>
                         </tr>
                         <tr>
-                            <td>个人</td>
+                            <td>货主</td>
                             <td>张三</td>
-                            <td>370185196512120212</td>
                             <td>15545251452</td>
-                            <td>15545251452</td>
-                            <td class="manage"><a href="./info.html">管理信息</a> | <a href="./goods.html">管理货物</a></td>
+                            <td>2018-4-10 12:00</td>
+                            <td class="manage"><a href="javascript:;" id="0">管理信息</a></td>
                         </tr>
                         <tr>
-                            <td>个人</td>
+                            <td>库主</td>
                             <td>张三</td>
-                            <td>370185196512120212</td>
                             <td>15545251452</td>
+                            <td>2018-4-10 12:00</td>
+                            <td class="manage"><a href="javascript:;" id="1">管理信息</a></td>
+                        </tr>
+                        <tr>
+                            <td>第三方</td>
+                            <td>张三</td>
                             <td>15545251452</td>
-                            <td class="manage"><a href="./info.html">管理信息</a> | <a href="./goods.html">管理货物</a></td>
+                            <td>2018-4-10 12:00</td>
+                            <td class="manage"><a href="javascript:;" id="2">管理信息</a></td>
                         </tr>
                     </table>
                 </div>
@@ -79,49 +85,6 @@
         </article>
     </div>
 </section>
-<table id="printList">
-    <tr>
-        <th>日期</th>
-        <th>重量</th>
-        <th>入库时间</th>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-</table>
-<style>
-    #printList{display: none}
-</style>
-<style type="text/css" media=print>
-    .noprint{display: none}
-    #printList{display: block}
-    table#printList tr,table#printList{width: 100%}
-    table#printList td,table#printList th{width: 33.3%;text-align: center;color: #333;padding: 14px 0;font-weight: normal}
-    table#printList th{background-color: #ccc;font-size: 16px;}
-    table#printList td{font-size: 14px;}
-    table#printList tr{border-bottom: 1px solid #dcdcdc}
-    table#printList tr.list td:last-child{color: #37a6f4;cursor: pointer}
-    table#printList tr:last-child{border-bottom: 0}
-    table#printList{border: 1px solid #dcdcdc;margin: 20px 0;}
-    table#printList th{background-color: #ccc;font-size: 16px;}
-</style>
 <footer>
     <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
 </footer>
@@ -142,16 +105,17 @@
         footerPosition();
         $(window).resize(footerPosition);
     });
-    function box(obj,id) {
-        layer.open({
-            type: 1,
-            title: false,
-            closeBtn: 0,
-            shadeClose: true,
-            skin: 'box',
-            content: $('.box')
-        });
-    }
+    $('.manage a').click(function () {
+        var pid = $(this).attr('id');
+        if(pid==0){
+            location.href='./info.html'
+        }else if(pid==1){
+            location.href='./info2.html'
+        }else{
+            location.href='./info1.html'
+
+        }
+    })
 </script>
 </body>
 </html>

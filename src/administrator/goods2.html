@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
     <link rel="stylesheet" href="../res/css/common.css">
     <link rel="stylesheet" href="../res/css/shipper.css">
-    <link rel="stylesheet" href="../res/css/keeper.css">
+    <link rel="stylesheet" href="../res/css/administrator.css">
+    <!--<link rel="stylesheet" href="../res/css/keeper.css">-->
     <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <title>我的存货</title>
@@ -22,86 +23,197 @@
         </div>
     </div>
 </header>
-<section class="inventory" id="info">
+<section class="inventory record"  id="info">
     <div class="mid_box clearfix">
         <aside class="fl noprint">
             <div class="navTitle">
                 我是管理员
             </div>
             <ul>
-                <li><a href="./shipper.html">管理货主</a></li>
-                <li class="on"><a href="./keeper.html">管理库主</a></li>
-                <li><a href="./thirdParty.html">管理第三方监管</a></li>
+                <li><a href="./shipper.html">人员管理</a></li>
+                <li class="on"><a href="./good2.html">货物管理</a></li>
+                <li><a href="./inventory.html">仓库管理</a></li>
+                <li><a href="./inventory.html">货物品类管理</a></li>
+                <li><a href="./thirdParty.html">标签搜索</a></li>
             </ul>
         </aside>
         <article class="fl clearfix">
-            <div class="clearfix">
-                <a href="javascript:;" onclick="javascript:history.back(-1)" class="add fl">返回</a>
-                <ul class="fr clearfix" id="tabs">
+            <div class="clearfix box">
+                <ul class="fl clearfix" id="tabs">
                     <li class="on fl" onclick="tab(this)">进行中</li>
                     <li class="fl" onclick="tab(this)">已到期</li>
                 </ul>
+                <div class="vCenter fr">
+                    <div class="search">
+                        <img src="../res/img/search.png" alt="">
+                        <input type="text" placeholder="手机号/姓名/微信号">
+                    </div>
+                </div>
             </div>
             <div id="tabBoxs">
                 <div class="loginBox on">
+                    <ul class="clearfix type">
+                        <li class="fl">货物</li>
+                        <li class="fl">所在仓库</li>
+                        <li class="fl">重量(斤)</li>
+                        <li class="fl">第三方监管</li>
+                        <li class="fl">操作</li>
+                    </ul>
                     <ul>
-                        <li class="clearfix">
-                            <img src="" alt="" class="pImg vCenter"/>
-                            <div class="pInfo vCenter">
-                                <div class="pTitle">***大型仓库</div>
-                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
-                                <div>仓库洞数量：3</div>
-                                <div>仓库设计容量：2500斤</div>
-                                <div>仓库剩余容量：1000斤</div>
-                                <div>
-                                    <button class="delBtb js-delWarehouse">删除仓库</button>
-                                </div>
-                            </div>
-                            <div class="pBtn vCenter">
-                                <div><a href="./guanli.html">管理仓库使用情况</a></div>
-                                <div><a href="./storesControl.html">管理监控/温湿度</a></div>
-                            </div>
+                        <li class="clearfix admin">
+                            <ul class="type clearfix">
+                                <li class="fl">货物编号：24804168688/4</li>
+                                <li class="fl"></li>
+                                <li class="fl"></li>
+                                <li class="fl">创建日期：2017-04-04</li>
+                                <li class="fl">截止日期：2017-05-04</li>
+                            </ul>
+                            <ul class="type clearfix list">
+                                <li class="fl clearfix">
+                                    <img src="" alt="" class="pImg fl">
+                                    <div class="fl">
+                                        <div>大蒜</div>
+                                        <div>类型：红皮</div>
+                                    </div>
+                                </li>
+                                <li class="fl">
+                                    <div>XXX的大型仓库</div>
+                                    <div style="line-height: 1.6;margin: 5px 0;">山东省济宁市金乡县太原路122号太原路1
+                                        太原路122号太原路122号</div>
+                                    <div>仓库区域：1洞</div>
+                                </li>
+                                <li class="fl">
+                                    <div>计划存放：200</div>
+                                    <div>实际存放：100</div>
+                                </li>
+                                <li class="fl">
+                                    <div>中国联通</div>
+                                </li>
+                                <li class="fl">
+                                    <div>管理出入库</div>
+                                    <div>管理监控</div>
+                                    <div>更改货物</div>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="clearfix">
-                            <img src="" alt="" class="pImg vCenter"/>
-                            <div class="pInfo vCenter">
-                                <div class="pTitle">***大型仓库</div>
-                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
-                                <div>仓库洞数量：3</div>
-                                <div>仓库设计容量：2500斤</div>
-                                <div>仓库剩余容量：1000斤</div>
-                                <div>
-                                    <button class="delBtb js-delWarehouse">删除仓库</button>
-                                </div>
-
-                            </div>
-                            <div class="pBtn vCenter">
-                                <div><a href="./guanli.html">管理仓库使用情况</a></div>
-                                <div><a href="./storesControl.html">管理监控/温湿度</a></div>
-                            </div>
+                        <li class="clearfix admin">
+                            <ul class="type clearfix">
+                                <li class="fl">货物编号：24804168688/4</li>
+                                <li class="fl"></li>
+                                <li class="fl"></li>
+                                <li class="fl">创建日期：2017-04-04</li>
+                                <li class="fl">截止日期：2017-05-04</li>
+                            </ul>
+                            <ul class="type clearfix list">
+                                <li class="fl clearfix">
+                                    <img src="" alt="" class="pImg fl">
+                                    <div class="fl">
+                                        <div>大蒜</div>
+                                        <div>类型：红皮</div>
+                                    </div>
+                                </li>
+                                <li class="fl">
+                                    <div>XXX的大型仓库</div>
+                                    <div style="line-height: 1.6;margin: 5px 0;">山东省济宁市金乡县太原路122号太原路1
+                                        太原路122号太原路122号</div>
+                                    <div>仓库区域：1洞</div>
+                                </li>
+                                <li class="fl">
+                                    <div>计划存放：200</div>
+                                    <div>实际存放：100</div>
+                                </li>
+                                <li class="fl">
+                                    <div>中国联通</div>
+                                </li>
+                                <li class="fl">
+                                    <div>管理出入库</div>
+                                    <div>管理监控</div>
+                                    <div>更改货物</div>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
                 <div class="loginBox">
+                    <ul class="clearfix type">
+                        <li class="fl">货物</li>
+                        <li class="fl">所在仓库</li>
+                        <li class="fl">重量(斤)</li>
+                        <li class="fl">第三方监管</li>
+                        <li class="fl">操作</li>
+                    </ul>
                     <ul>
-                        <li class="clearfix">
-                            <img src="" alt="" class="pImg vCenter"/>
-                            <div class="pInfo vCenter">
-                                <div class="pTitle">***大型仓库</div>
-                                <div>仓库地址：山东省济宁市金乡县太原路122号</div>
-                                <div>仓库洞数量：3</div>
-                                <div>仓库设计容量：2500斤</div>
-                                <div>仓库剩余容量：1000斤</div>
-                                <div>
-                                    <button class="delBtb js-delWarehouse">删除仓库</button>
-                                </div>
-
-                            </div>
-                            <div class="pBtn vCenter">
-                                <div><a href="./guanli.html">管理仓库使用情况</a></div>
-                                <div><a href="./storesControl.html">管理监控/温湿度</a></div>
-                                <div class="del"><a href="">删除</a></div>
-                            </div>
+                        <li class="clearfix admin">
+                            <ul class="type clearfix">
+                                <li class="fl">货物编号：24804168688/4</li>
+                                <li class="fl"></li>
+                                <li class="fl"></li>
+                                <li class="fl">创建日期：2017-04-04</li>
+                                <li class="fl">截止日期：2017-05-04</li>
+                            </ul>
+                            <ul class="type clearfix list">
+                                <li class="fl clearfix">
+                                    <img src="" alt="" class="pImg fl">
+                                    <div class="fl">
+                                        <div>大蒜</div>
+                                        <div>类型：红皮</div>
+                                    </div>
+                                </li>
+                                <li class="fl">
+                                    <div>XXX的大型仓库</div>
+                                    <div style="line-height: 1.6;margin: 5px 0;">山东省济宁市金乡县太原路122号太原路1
+                                        太原路122号太原路122号</div>
+                                    <div>仓库区域：1洞</div>
+                                </li>
+                                <li class="fl">
+                                    <div>计划存放：200</div>
+                                    <div>实际存放：100</div>
+                                </li>
+                                <li class="fl">
+                                    <div>中国联通</div>
+                                </li>
+                                <li class="fl">
+                                    <div>管理出入库</div>
+                                    <div>管理监控</div>
+                                    <div class="redBtn">删除货物</div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="clearfix admin">
+                            <ul class="type clearfix">
+                                <li class="fl">货物编号：24804168688/4</li>
+                                <li class="fl"></li>
+                                <li class="fl"></li>
+                                <li class="fl">创建日期：2017-04-04</li>
+                                <li class="fl">截止日期：2017-05-04</li>
+                            </ul>
+                            <ul class="type clearfix list">
+                                <li class="fl clearfix">
+                                    <img src="" alt="" class="pImg fl">
+                                    <div class="fl">
+                                        <div>大蒜</div>
+                                        <div>类型：红皮</div>
+                                    </div>
+                                </li>
+                                <li class="fl">
+                                    <div>XXX的大型仓库</div>
+                                    <div style="line-height: 1.6;margin: 5px 0;">山东省济宁市金乡县太原路122号太原路1
+                                        太原路122号太原路122号</div>
+                                    <div>仓库区域：1洞</div>
+                                </li>
+                                <li class="fl">
+                                    <div>计划存放：200</div>
+                                    <div>实际存放：100</div>
+                                </li>
+                                <li class="fl">
+                                    <div>中国联通</div>
+                                </li>
+                                <li class="fl">
+                                    <div>管理出入库</div>
+                                    <div>管理监控</div>
+                                    <div class="redBtn">删除货物</div>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>

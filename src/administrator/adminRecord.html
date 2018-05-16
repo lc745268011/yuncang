@@ -14,6 +14,9 @@
     <title>我的存货</title>
 </head>
 <body>
+<style>
+    #info.inventory article .add{margin-right: 20px;}
+</style>
 <header class="noprint">
     <div class="mid_box clearfix">
         <div id="logo" class="fl"><a href="/"><img src="../res/img/logo.png" alt=""></a></div>
@@ -37,6 +40,8 @@
         <article class="fl clearfix noprint">
             <div class="clearfix">
                 <a href="javascript:;" onclick="javascript:history.back(-1)" class="add fl">返回</a>
+                <a href="javascript:;" onclick="javascript:;" class="add fl edit">添加入库记录</a>
+                <a href="javascript:;" onclick="javascript:;" class="add fl edit">添加出库记录</a>
             </div>
             <div class="rTitle">总入库500斤 | 总出库200斤 | 仓库存量300斤</div>
             <div class="recordList">
@@ -83,7 +88,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="box recordList" style="display: none">
+            <div class="box recordList" style="display: none" id="box1">
                 <div class="boxTitle">
                     <div class="vCenter">查看标签</div>
                     <div class="closeBtn vCenter"><img src="../res/img/closeBtn.png" alt="" onclick="layer.closeAll()"></div>
@@ -116,58 +121,37 @@
                         </tr>
                     </table>
                 </div>
+            </div>
+            <div class="box recordList" style="display: none" id="box2">
+                <div class="boxTitle">
+                    <div class="vCenter">添加入库记录</div>
+                    <div class="closeBtn vCenter"><img src="../res/img/closeBtn.png" alt="" onclick="layer.closeAll()"></div>
+                </div>
+                <div style="padding: 40px 10px;text-align: center">
+                    <div>
+                        <input type="text" placeholder="请输入货物标签">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="请输入货物重量">
+                    </div>
+                    <div>
+                        <button>保存</button>
+                    </div>
+                </div>
 
             </div>
+
         </article>
     </div>
 </section>
-<table id="printList">
-    <tr>
-        <th>日期</th>
-        <th>重量</th>
-        <th>入库时间</th>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-    <tr>
-        <td>8405ME23125498KA</td>
-        <td>200斤</td>
-        <td>2018-01-04 12:00</td>
-    </tr>
-</table>
-<style>
-    #printList{display: none}
-</style>
-<style type="text/css" media=print>
-    .noprint{display: none}
-    #printList{display: block}
-    table#printList tr,table#printList{width: 100%}
-    table#printList td,table#printList th{width: 33.3%;text-align: center;color: #333;padding: 14px 0;font-weight: normal}
-    table#printList th{background-color: #ccc;font-size: 16px;}
-    table#printList td{font-size: 14px;}
-    table#printList tr{border-bottom: 1px solid #dcdcdc}
-    table#printList tr.list td:last-child{color: #37a6f4;cursor: pointer}
-    table#printList tr:last-child{border-bottom: 0}
-    table#printList{border: 1px solid #dcdcdc;margin: 20px 0;}
-    table#printList th{background-color: #ccc;font-size: 16px;}
-</style>
 <footer>
     <div class="mid_box">©2018 云仓大数据平台 版权所有</div>
 </footer>
-
+<style>
+    #info.record #box2{width: 390px!important;height: 294px!important;}
+    #info.record #box2 input{width: 300px;height: 37px;line-height: 37px;border-radius: 4px;border: 1px solid #dcdcdc;margin-bottom: 26px;padding: 0 16px;font-size: 14px;}
+    #info.record #box2 button{width: 154px;height: 38px;color: #fff;background-color: #3aa8f5;border:0;line-height: 38px;text-align: center;border-radius: 4px;}
+</style>
 <script>
     $(function(){
         function footerPosition(){
@@ -184,6 +168,16 @@
         footerPosition();
         $(window).resize(footerPosition);
     });
+    $('.edit').click(function () {
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true,
+            skin: 'box3',
+            content: $('#box2')
+        });
+    });
     function box(obj,id) {
         layer.open({
             type: 1,
@@ -191,7 +185,7 @@
             closeBtn: 0,
             shadeClose: true,
             skin: 'box',
-            content: $('.box')
+            content: $('#box1')
         });
     }
 </script>

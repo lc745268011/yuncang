@@ -6,3 +6,19 @@
 .temperature{margin-left: 35px;color: #37a6f4;font-size: 16px;cursor: pointer}
 .edit{font-size: 16px;color: #37a6f4;padding: 10px 7px 0; cursor: pointer}
 .del{font-size: 16px;color: #ed3333;padding: 10px 7px 0; cursor: pointer}
+.type{width: 100%;border: 1px solid #dcdcdc;margin-bottom: 20px;background: #f7f7f7}
+#info.inventory article .type li{border: 0;padding: 10px 20px;margin-bottom: 0;text-align: center;font-size: 14px;}
+#info.inventory article .type li:nth-child(1){width: 22%}
+#info.inventory article .type li:nth-child(2){width: 24%;text-align: left;}
+#info.inventory article .type li:nth-child(3){width: 14%}
+#info.inventory article .type li:nth-child(4){width: 20%}
+#info.inventory article .type li:nth-child(5){width: 20%}
+#info.inventory article li.admin{padding: 0;border: 0;}
+#info.inventory article li.admin .type{margin-bottom: 0;background: #e3f3ff;border-color:#a2d3f6 }
+#info.inventory article li.admin li{font-size: 12px;}
+#info.inventory article li.admin .type li:nth-child(1){text-align: left}
+#info.inventory article .type li:nth-child(5) div{font-size: 12px;color: #ffffff;background: #3aa8f5;width: 90px;height: 30px;text-align: center;margin: auto;line-height: 30px;border-radius: 4px;margin-bottom: 6px;}
+#info.inventory article .type li:nth-child(5) div:last-child{margin-bottom: 0}
+#info.inventory article .type li .pImg{width: 96px;height: 74px;display: inline-block;border-radius: 0;margin-right: 14px;}
+#info.inventory article li.admin .type.list{background: #fff;border-top: 0}
+#info.inventory article .type li:nth-child(5) div:last-child.redBtn{background: #df5353}
