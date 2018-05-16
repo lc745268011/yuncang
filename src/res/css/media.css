@@ -1,0 +1,15 @@
+@media(max-width:490px){
+    .mid_box, header, section, footer{width: 100%;min-width: 100%}
+    header{padding: 0 0.3rem;height: 1rem;line-height: 0.99rem}
+    header .title{display: none}
+    section div.login{width: 6rem;height: auto}
+    section div.login .loginBox.on{padding: 0.3rem}
+    section div.login li{height: 1rem;line-height:1rem}
+    section div.login .loginBox .loginBtn{width: 100%}
+    section div.login .loginBox .code{width: 3.44rem;}
+    section div.login .loginBox .sendMsg,section .select-menu-ul{width: 1.66rem}
+    section div.login .loginBox .sendMsg{margin-left: 0.2rem}
+    section div.login .loginBox input,section .select-menu-input{font-size: 0.28rem;padding: 0 0.3rem}
+    footer{display: none}
+    .vCenter1{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webki-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center; }
+}

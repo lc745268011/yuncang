@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../../res/js/theme/default/layer.css">
+    <link rel="stylesheet" href="../../res/css/common.css">
+    <link rel="stylesheet" href="../../res/css/divSelect.css">
+    <link rel="stylesheet" href="../../res/css/media.css">
+    <link rel="stylesheet" href="../../res/css/public.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="../../res/js/jquery.placeholder.js"></script>
+    <script src="../../res/js/layer.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <title>{$title}</title>
+</head>
+<body>
+<header>
+    <div class="mid_box clearfix">
+        <div id="logo" class="fl"><a href="/"><img src="../../res/img/logo.png" alt=""></a></div>
+        <div class="fl title">
+            <span>{$title}</span>
+        </div>
+        <div class="fr">
+            <a href="/login">退出</a>
+        </div>
+    </div>
+</header>
+<section class="vCenter1">
+    <div class="login">
+        <div class="tab">
+            <ul class="clearfix" id="tabs">
+                <li class="on fl" onclick="tab(this)">登录</li>
+                <li class="fl" onclick="tab(this)">注册</li>
+            </ul>
+        </div>
+        <div id="tabBoxs">
+            <div class="loginBox on" id="login">
+                <input type="text" placeholder="请输入手机号" id="phone">
+                <input type="password" placeholder="请输入密码" id="password">
+                <input type="button" value="登  录" class="loginBtn login1">
+                <a href="./forgetPassword.html" class="forgetPass">忘记密码</a>
+            </div>
+            <div class="loginBox" id="reg">
+                <input type="text" placeholder="请输入手机号" class="fl code" id="reg_phone">
+                <div class="select-menu fl sendMsg">
+                    <div class="select-menu-div">
+                        <!--<input id="No1" id="No1" disabled class="select-menu-input"/>-->
+                        <div id="No1" id="No1" disabled class="select-menu-input"></div>
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                    <ul class="select-menu-ul" id="reg_type">
+                        <li  class="select-this" id="1">货主</li>
+                        <li id="2">库主</li>
+                        <li id="3">监管</li>
+                        <li id="4">其他</li>
+                    </ul>
+                </div>
+                <!--<div class="clearfix">-->
+                    <!--<input type="text" placeholder="请输入验证码" class="fl code" id="reg_code">-->
+                    <!--<a href="javascript:;" class="fl sendMsg" onclick="sendMsg(this)">发送验证码</a>-->
+                    <!--<input type="button" class="fl sendMsg" value="发送验证码" onclick="sendMsg(this)">-->
+                <!--</div>-->
+                <input type="password" placeholder="请设置登录密码" id="reg_password">
+                <input type="button" value="立即注册" class="loginBtn" id="regBtn">
+            </div>
+        </div>
+
+    </div>
+</section>
+<style>
+    #reg span.placeholder-parent:first-child{width: auto!important;float: left}
+    #reg .placeholder{width: 230px!important;}
+    section{padding: 0}
+
+</style>
+<script src="../../res/js/tab.js"></script>
+<script src="../../res/js/divSelect.js"></script>
+<script>
+    $(function() {
+        $("input").placeholder();
+    });
+
+    $(".login1").click(function(){
+
+        var phone=$("#phone").val();
+        var password=$("#password").val();
+        var pattern = /^1[34578]\d{9}$/;
+        var href="login";
+        if(!pattern.test(phone)){
+            alert('手机号不正确!');
+            return false;
+        };
+
+        if(password=='' || password.length<6){
+            alert('密码不正确');
+            return false;
+        }
+
+        $.ajax({
+            url:href,
+            data:{phone:phone,password:password},
+            dataType:"json",
+            type:"post",
+            success:function(data){
+                if(data.msg==100){
+
+                    window.location.href=data.url;
+                }
+            }
+        })
+
+    })
+    /**
+     * 倒计时
+     */
+    var clock = '';
+    var nums = 60;
+    var btn;
+    function sendMsg(thisBtn) {
+        btn = thisBtn;
+        btn.disabled = true; //将按钮置为不可点击
+        btn.value = nums+'秒后可重新获取';
+        clock = setInterval(doLoop, 1000); //一秒执行一次
+    }
+    function doLoop() {
+        nums--;
+        if(nums > 0){
+            btn.value = nums+'秒后可重新获取';
+        }else{
+            clearInterval(clock); //清除js定时器
+            btn.disabled = false;
+            btn.value = '点击发送验证码';
+            nums = 10; //重置时间
+        }
+    }
+    $('#regBtn').click(function () {
+        var phone=$('#reg_phone').val(),
+            password=$('#reg_password').val(),
+            type=$('#reg_type .select-this').attr('id');
+
+        $.ajax({
+            url:"register",
+            data:{phone:phone,userpass:password,usertype:type,edittype:0,name:'新用户'},
+            dataType:"json",
+            type:"post",
+            success:function(data){
+                if(data.msg==100){
+
+                    window.location.href=data.url;
+                }
+            }
+        })
+//        $.post("register",{phone:phone,userpass:password,usertype:type,edittype:0,name:'新用户'},function(result){
+//            if(result.status==100){
+//                layer.msg('注册成功');
+//            }
+//        });
+    })
+    /**
+     * 登录回车监听事件
+     */
+    $('#phone').bind('keypress', function(event) {
+        if (event.keyCode == "13") {
+            event.preventDefault();
+            //回车执行查询
+            $('#password').focus();
+        }
+    });
+    $('#password').bind('keypress', function(event) {
+        if (event.keyCode == "13") {
+            event.preventDefault();
+            //回车执行查询
+            $('.login1').click();
+        }
+    });
+    /**
+     * 注册回车事件监听
+     */
+    $('#reg_phone').bind('keypress', function(event) {
+        if (event.keyCode == "13") {
+            event.preventDefault();
+            //回车执行查询
+            $('#reg_code').focus();
+        }
+    });
+    $('#reg_code').bind('keypress', function(event) {
+        if (event.keyCode == "13") {
+            event.preventDefault();
+            //回车执行查询
+            $('#reg_password').focus();
+        }
+    });
+    $('#reg_password').bind('keypress', function(event) {
+        if (event.keyCode == "13") {
+            event.preventDefault();
+            //回车执行查询
+            $('#regBtn').click();
+        }
+    });
+</script>
+<script>
+    window.onload=function () {
+        $('section').height(window.innerHeight-$('header').height())
+    }
+</script>
+<script>
+    (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        }
+    )(document, window);
+</script>
+
+
